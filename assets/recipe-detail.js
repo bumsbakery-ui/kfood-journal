@@ -2,6 +2,8 @@
   const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
   const root = document.querySelector('[data-recipe-detail]');
   const slug = new URLSearchParams(location.search).get('slug');
+  const slugAliases = { 'naengmyeon-kr': 'naengmyeon-2' };
+  const requestedSlug = slugAliases[(slug || '').toLowerCase()] || slug;
   const decode = (value = '') => { const el = document.createElement('textarea'); el.innerHTML = value; return el.value; };
   const equivalentSlug = (a = '', b = '') => {
     try { return decodeURIComponent(a).toLowerCase() === decodeURIComponent(b).toLowerCase(); }
@@ -32,11 +34,12 @@
     });
   };
   if (!slug) { error(); return; }
-  fetch('/assets/data/posts-full.json?v=20260720-images')
+  fetch('/assets/data/posts-full.json?v=20260720-naengmyeon')
     .then(response => { if (!response.ok) throw new Error('load failed'); return response.json(); })
     .then(posts => {
-      const post = posts.find(item => item.language === lang && equivalentSlug(item.slug, slug));
+      const post = posts.find(item => item.language === lang && equivalentSlug(item.slug, requestedSlug));
       if (!post) { error(); return; }
+      if (requestedSlug !== slug) history.replaceState(null, '', `${location.pathname}?slug=${encodeURIComponent(post.slug)}`);
       const title = decode(post.title);
       const back = lang === 'ko' ? '모든 레시피로 돌아가기' : 'Back to all recipes';
       const category = lang === 'ko' ? '한식 레시피' : 'KOREAN RECIPE';
