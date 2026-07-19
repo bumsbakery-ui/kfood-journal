@@ -32,7 +32,7 @@
     });
   };
   if (!slug) { error(); return; }
-  fetch('/assets/data/posts-full.json')
+  fetch('/assets/data/posts-full.json?v=20260720-images')
     .then(response => { if (!response.ok) throw new Error('load failed'); return response.json(); })
     .then(posts => {
       const post = posts.find(item => item.language === lang && equivalentSlug(item.slug, slug));
