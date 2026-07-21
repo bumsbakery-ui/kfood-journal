@@ -4,9 +4,10 @@
   const prefix = ko ? '/ko' : '';
   const current = location.pathname.replace(/^\/ko/, '') || '/';
   const isRecipeDetail = current.startsWith('/recipe/');
-  const alternate = isRecipeDetail
+  const explicitAlternate = document.body.dataset.alternateUrl;
+  const alternate = explicitAlternate || (isRecipeDetail
     ? (ko ? '/recipes/' : '/ko/recipes/')
-    : (ko ? (current === '/' ? '/' : current) : `/ko${current === '/' ? '/' : current}`);
+    : (ko ? (current === '/' ? '/' : current) : `/ko${current === '/' ? '/' : current}`));
   const labels = ko
     ? { recipes:'레시피', stories:'이야기', guide:'한식 가이드', about:'소개', contact:'문의', privacy:'개인정보처리방침', find:'레시피 찾기', menu:'메뉴', lang:'EN' }
     : { recipes:'Recipes', stories:'Stories', guide:'Food Guide', about:'About', contact:'Contact', privacy:'Privacy', find:'Find a recipe', menu:'Menu', lang:'한국어' };
@@ -27,4 +28,7 @@
   const menuButton = document.querySelector('.menu-button');
   const nav = document.querySelector('.primary-nav');
   menuButton?.addEventListener('click', () => { const open = nav.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', String(open)); });
+  const analytics = document.createElement('script');
+  analytics.src = '/assets/analytics.js';
+  document.head.appendChild(analytics);
 })();
