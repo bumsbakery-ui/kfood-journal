@@ -116,10 +116,12 @@
         <p class="eyebrow">A LETTER FROM KFOOD</p>
         <h2>Bring Korea<br />to your table.</h2>
         <p>New recipes and meaningful stories from Korea, delivered twice a month.</p>
-        <form class="subscribe-form">
+        <form class="subscribe-form" data-kfood-form="newsletter">
           <label class="sr-only" for="email">Email address</label>
-          <input id="email" type="email" placeholder="Your email address" />
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="Your email address" maxlength="254" required />
+          <label class="form-honeypot" aria-hidden="true">Leave this field empty<input name="website" tabindex="-1" autocomplete="off" /></label>
           <button type="submit">Subscribe <span>→</span></button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
@@ -131,5 +133,6 @@
     </footer>
     <script src="/assets/ads.js"></script>
     <script src="script.js"></script>
+    <script src="/assets/forms.js"></script>
   </body>
 </html>
