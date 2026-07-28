@@ -76,6 +76,8 @@ def main() -> None:
     guide = (ROOT / "korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
     if '"@type":"Article"' not in guide:
         fail("beginner cooking guide is missing Article structured data")
+    if 'og:image' not in guide or 'korean-cooking-beginners-hero.webp' not in guide:
+        fail("beginner cooking guide is missing its hero image metadata")
     if 'href="https://kfood.bumkok.com/ko/korean-cooking-for-beginners/"' not in guide:
         fail("English beginner guide is missing its Korean hreflang")
     for target in ("dolsot-bibimbap", "yukgaejang", "godeungeo-gui"):
@@ -85,6 +87,8 @@ def main() -> None:
     korean_guide = (ROOT / "ko/korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
     if '"@type":"Article"' not in korean_guide or '"inLanguage":"ko"' not in korean_guide:
         fail("Korean beginner cooking guide is missing Korean Article structured data")
+    if 'og:image' not in korean_guide or 'korean-cooking-beginners-hero.webp' not in korean_guide:
+        fail("Korean beginner cooking guide is missing its hero image metadata")
     if 'data-alternate-url="/korean-cooking-for-beginners/"' not in korean_guide:
         fail("Korean beginner guide is missing its English language switch")
     for target in ("dolsot-bibimbap-kr", "yukgaejang-kr", "godeungeo-gui"):

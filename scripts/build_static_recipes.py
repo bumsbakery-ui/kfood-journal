@@ -161,6 +161,7 @@ POST_OVERRIDES = {
 
 BEGINNER_GUIDE_PATH = "/korean-cooking-for-beginners/"
 BEGINNER_GUIDE_KO_PATH = "/ko/korean-cooking-for-beginners/"
+BEGINNER_GUIDE_IMAGE = "/assets/images/korean-cooking-beginners-hero.webp"
 
 # Historical duplicate URLs remain available, while their search signals are
 # consolidated to the newer canonical copy.
@@ -610,6 +611,7 @@ def render(post: dict, posts_by_slug: dict[str, dict]) -> str:
 def render_beginner_guide() -> str:
     canonical = SITE + BEGINNER_GUIDE_PATH
     korean_url = SITE + BEGINNER_GUIDE_KO_PATH
+    image_url = SITE + BEGINNER_GUIDE_IMAGE
     title = "Korean Cooking for Beginners: A 5-Dish Starter Plan"
     description = (
         "Learn Korean cooking through five approachable dishes, a compact pantry, "
@@ -623,6 +625,7 @@ def render_beginner_guide() -> str:
             "mainEntityOfPage": canonical,
             "headline": title,
             "description": description,
+            "image": [image_url],
             "author": {
                 "@type": "Organization",
                 "name": "KFOOD Journal",
@@ -722,7 +725,10 @@ def render_beginner_guide() -> str:
   <meta property="og:title" content="{html.escape(title, quote=True)}">
   <meta property="og:description" content="{html.escape(description, quote=True)}">
   <meta property="og:url" content="{canonical}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{image_url}">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{schema}</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/scoredream/SCoreDream.css">
   <link rel="stylesheet" href="/styles.css">
@@ -734,7 +740,7 @@ def render_beginner_guide() -> str:
   <main><article class="article-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/food-guide/">Food Guide</a><span>›</span><span aria-current="page">{html.escape(title)}</span></nav>
     <a class="article-back" href="/food-guide/">← Back to the food guide</a>
-    <header class="article-header"><div><p class="article-kicker">KOREAN COOKING 101</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div></header>
+    <header class="article-header"><div><p class="article-kicker">KOREAN COOKING 101</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div><img class="article-lead-image" src="{BEGINNER_GUIDE_IMAGE}" width="1600" height="900" alt="Bibimbap, pajeon, bulgogi, doenjang jjigae, and grilled mackerel on a Korean table" decoding="async" fetchpriority="high"></header>
     <div class="article-body">{content}</div>
     <section class="related-recipes"><p class="article-kicker">START COOKING</p><div>
       <a href="/dolsot-bibimbap/"><span>01</span><strong>Dolsot Bibimbap</strong></a>
@@ -753,6 +759,7 @@ def render_beginner_guide() -> str:
 def render_beginner_guide_ko() -> str:
     canonical = SITE + BEGINNER_GUIDE_KO_PATH
     english_url = SITE + BEGINNER_GUIDE_PATH
+    image_url = SITE + BEGINNER_GUIDE_IMAGE
     title = "한식 요리 입문: 다섯 가지 메뉴로 시작하는 실전 가이드"
     description = (
         "비빔밥, 파전, 불고기, 된장찌개, 고등어구이로 한식의 기본 양념과 "
@@ -766,6 +773,7 @@ def render_beginner_guide_ko() -> str:
             "mainEntityOfPage": canonical,
             "headline": title,
             "description": description,
+            "image": [image_url],
             "author": {
                 "@type": "Organization",
                 "name": "KFOOD Journal",
@@ -866,7 +874,10 @@ def render_beginner_guide_ko() -> str:
   <meta property="og:title" content="{html.escape(title, quote=True)}">
   <meta property="og:description" content="{html.escape(description, quote=True)}">
   <meta property="og:url" content="{canonical}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{image_url}">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{schema}</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/scoredream/SCoreDream.css">
   <link rel="stylesheet" href="/styles.css">
@@ -878,7 +889,7 @@ def render_beginner_guide_ko() -> str:
   <main><article class="article-shell">
     <nav class="breadcrumbs" aria-label="이동 경로"><a href="/ko/">홈</a><span>›</span><a href="/ko/food-guide/">한식 가이드</a><span>›</span><span aria-current="page">{html.escape(title)}</span></nav>
     <a class="article-back" href="/ko/food-guide/">← 한식 가이드로 돌아가기</a>
-    <header class="article-header"><div><p class="article-kicker">한식 요리 입문</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div></header>
+    <header class="article-header"><div><p class="article-kicker">한식 요리 입문</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div><img class="article-lead-image" src="{BEGINNER_GUIDE_IMAGE}" width="1600" height="900" alt="비빔밥, 파전, 불고기, 된장찌개, 고등어구이로 차린 한식 상차림" decoding="async" fetchpriority="high"></header>
     <div class="article-body">{content}</div>
     <section class="related-recipes"><p class="article-kicker">다음 요리 시작하기</p><div>
       <a href="/dolsot-bibimbap-kr/"><span>01</span><strong>돌솥비빔밥</strong></a>
