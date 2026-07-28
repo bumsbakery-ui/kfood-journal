@@ -160,6 +160,7 @@ POST_OVERRIDES = {
 }
 
 BEGINNER_GUIDE_PATH = "/korean-cooking-for-beginners/"
+BEGINNER_GUIDE_KO_PATH = "/ko/korean-cooking-for-beginners/"
 
 # Historical duplicate URLs remain available, while their search signals are
 # consolidated to the newer canonical copy.
@@ -608,6 +609,7 @@ def render(post: dict, posts_by_slug: dict[str, dict]) -> str:
 
 def render_beginner_guide() -> str:
     canonical = SITE + BEGINNER_GUIDE_PATH
+    korean_url = SITE + BEGINNER_GUIDE_KO_PATH
     title = "Korean Cooking for Beginners: A 5-Dish Starter Plan"
     description = (
         "Learn Korean cooking through five approachable dishes, a compact pantry, "
@@ -713,6 +715,9 @@ def render_beginner_guide() -> str:
   <meta name="description" content="{html.escape(description, quote=True)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="{canonical}">
+  <link rel="alternate" hreflang="en" href="{canonical}">
+  <link rel="alternate" hreflang="ko" href="{korean_url}">
+  <link rel="alternate" hreflang="x-default" href="{canonical}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{html.escape(title, quote=True)}">
   <meta property="og:description" content="{html.escape(description, quote=True)}">
@@ -724,8 +729,8 @@ def render_beginner_guide() -> str:
   <link rel="stylesheet" href="/assets/pages.css">
   {ADSENSE_LOADER}
 </head>
-<body class="page-shell" data-alternate-url="/ko/food-guide/">
-  <div data-site-header>{site_header("en", "/ko/food-guide/")}</div>
+<body class="page-shell" data-alternate-url="{BEGINNER_GUIDE_KO_PATH}">
+  <div data-site-header>{site_header("en", BEGINNER_GUIDE_KO_PATH)}</div>
   <main><article class="article-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/food-guide/">Food Guide</a><span>›</span><span aria-current="page">{html.escape(title)}</span></nav>
     <a class="article-back" href="/food-guide/">← Back to the food guide</a>
@@ -738,6 +743,150 @@ def render_beginner_guide() -> str:
     </div></section>
   </article></main>
   <div data-site-footer>{site_footer("en")}</div>
+  <script src="/assets/shared.js"></script>
+  <script src="/assets/ads.js"></script>
+</body>
+</html>
+'''
+
+
+def render_beginner_guide_ko() -> str:
+    canonical = SITE + BEGINNER_GUIDE_KO_PATH
+    english_url = SITE + BEGINNER_GUIDE_PATH
+    title = "한식 요리 입문: 다섯 가지 메뉴로 시작하는 실전 가이드"
+    description = (
+        "비빔밥, 파전, 불고기, 된장찌개, 고등어구이로 한식의 기본 양념과 "
+        "조리 순서, 불 조절을 익히는 초보자용 가이드입니다."
+    )
+    schema = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": canonical + "#article",
+            "mainEntityOfPage": canonical,
+            "headline": title,
+            "description": description,
+            "author": {
+                "@type": "Organization",
+                "name": "KFOOD Journal",
+                "url": SITE + "/ko/about/",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "KFOOD Journal",
+                "url": SITE + "/ko/",
+            },
+            "datePublished": "2026-07-28",
+            "dateModified": "2026-07-28",
+            "inLanguage": "ko",
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("</", "<\\/")
+    content = f'''
+<p class="wp-block-paragraph">한식을 처음부터 전부 배우려고 하면 어렵게 느껴집니다. 양념장을 섞고, 채소를 무치고, 국물을 끓이고, 양념한 고기를 굽고, 불을 조절하는 법을 각각 익힐 수 있는 다섯 가지 메뉴부터 시작해 보세요.</p>
+
+<p class="wp-block-paragraph">이 가이드는 한식을 처음 요리하는 일주일을 위한 계획입니다. 모든 한식 재료나 특별한 조리도구, 많은 반찬이 필요하지 않습니다. 장을 보기 전에 레시피를 끝까지 읽고 알레르기 유발 성분을 확인하세요. 간장, 김치, 된장, 고추장은 제품마다 염도와 맛이 다르므로 마지막에 간을 조절하는 것이 안전합니다.</p>
+
+<h2 class="wp-block-heading">처음 준비할 작은 한식 기본 재료</h2>
+<ul class="wp-block-list">
+<li><strong>단립종 또는 중립종 쌀:</strong> 진한 양념과 국물의 맛을 받쳐 주는 기본 재료입니다.</li>
+<li><strong>간장:</strong> 레시피에 종류가 적혀 있다면 그 간장을 사용하고, 첫 한 병은 활용도가 높은 양조간장이 편리합니다.</li>
+<li><strong>된장:</strong> 찌개와 국, 나물 양념에 깊은 감칠맛을 더하는 발효 콩장입니다.</li>
+<li><strong>고추장:</strong> 매운맛과 단맛, 짠맛, 농도를 함께 더하는 발효 고추장입니다.</li>
+<li><strong>고춧가루:</strong> 고추장처럼 걸쭉해지지 않으면서 선명한 매운맛을 냅니다.</li>
+<li><strong>참기름과 볶은 참깨:</strong> 향을 살리는 마무리 재료이므로 적은 양부터 넣습니다.</li>
+<li><strong>마늘과 대파:</strong> 아래 다섯 가지 메뉴에 두루 쓰이는 기본 향신 채소입니다.</li>
+</ul>
+
+<p class="wp-block-paragraph">한두 가지 메뉴만 만들 예정이라면 전체 목록을 한꺼번에 사지 말고 해당 레시피에 필요한 재료만 준비하세요. 모든 제품은 포장지의 보관 방법을 따르고, 된장과 고추장은 깨끗하고 마른 도구로 덜어 사용합니다.</p>
+
+<h2 class="wp-block-heading">첫 번째: 비빔밥으로 균형과 준비 순서 익히기</h2>
+<p class="wp-block-paragraph"><a href="/bibimbap-2/">비빔밥</a>은 각각의 재료를 따로 준비할 수 있어 초보자가 시작하기 좋습니다. 밥을 짓고, 두세 가지 채소를 각각 무친 뒤 달걀이나 다른 단백질을 올리고 식탁에서 고추장과 비벼 보세요. 식당처럼 완벽하게 담는 것보다 짠맛, 단맛, 매운맛, 신선한 맛과 고소한 맛의 균형을 익히는 것이 목적입니다.</p>
+
+<p class="wp-block-paragraph">기본 비빔밥이 익숙해지면 <a href="/dolsot-bibimbap-kr/">돌솥비빔밥</a>에 도전해 보세요. 재료의 물기를 조절하고 서두르지 않고 가열하면 바삭한 누룽지가 만들어집니다.</p>
+
+<h2 class="wp-block-heading">두 번째: 파전으로 반죽과 팬 온도 익히기</h2>
+<p class="wp-block-paragraph"><a href="/pajeon-kr/">파전</a>은 팬의 온도가 식감에 어떤 영향을 주는지 보여 줍니다. 반죽을 얇게 펴고 팬과 충분히 닿도록 기름을 두른 뒤, 아랫면이 완전히 굳을 때까지 기다렸다가 뒤집으세요. 겉은 빠르게 타는데 가운데가 질다면 다음 장은 더 얇게 펴거나 불을 조금 낮춥니다.</p>
+
+<p class="wp-block-paragraph">간장과 식초를 섞은 간단한 양념장을 곁들이면 됩니다. 다른 요리를 만들고 남은 대파와 소량의 채소를 활용하기에도 좋습니다.</p>
+
+<h2 class="wp-block-heading">세 번째: 불고기로 양념과 굽기 익히기</h2>
+<p class="wp-block-paragraph"><a href="/bulgogi-2/">불고기</a>는 간장 양념과 빠른 굽기를 배우는 메뉴입니다. 고기를 얇게 썰고 팬을 가득 채우지 마세요. 양념물이 많거나 고기를 한꺼번에 넣으면 갈색으로 구워지지 않고 찌듯 익습니다. 나누어 굽고 빨리 익는 채소는 마지막에 넣습니다.</p>
+
+<p class="wp-block-paragraph">설탕이나 간장을 더 넣기 전에 익힌 양념의 맛을 먼저 확인하세요. 균형 잡힌 불고기는 짭짤하면서 은은하게 달고, 걸쭉한 양념이 고기를 덮지 않습니다.</p>
+
+{ad_zone("content", True)}
+
+<h2 class="wp-block-heading">네 번째: 된장찌개로 간을 쌓는 순서 익히기</h2>
+<p class="wp-block-paragraph"><a href="/doenjang-jjigae-kr/">된장찌개</a>는 국물의 맛을 단계별로 만드는 연습입니다. 된장을 적은 양부터 풀고 단단한 채소를 거의 익을 때까지 끓인 다음, 두부와 대파처럼 빨리 익는 재료를 넣으세요. 된장은 제품마다 염도가 크게 다르므로 충분히 끓인 뒤 마지막 간을 맞춥니다.</p>
+
+<p class="wp-block-paragraph">말린 멸치를 구하기 어렵거나 식단에 맞지 않는다면 다시마와 말린 버섯으로 국물을 낼 수 있습니다. 맛은 달라지지만 재료를 넣는 순서를 익히는 데에는 충분합니다.</p>
+
+<h2 class="wp-block-heading">다섯 번째: 고등어구이로 수분과 익힘 정도 익히기</h2>
+<p class="wp-block-paragraph"><a href="/godeungeo-gui/">고등어구이</a>는 소금을 뿌리고, 표면의 물기를 닦고, 껍질은 바삭하고 가장 두꺼운 살은 쉽게 갈라질 때까지 굽는 단순한 메뉴입니다. 불을 사용하기 전에 재료를 알맞게 준비하는 습관을 익힐 수 있습니다.</p>
+
+<p class="wp-block-paragraph">통생선이 부담스럽다면 껍질이 붙은 토막이나 필레를 사용하세요. 식당처럼 많은 반찬을 준비하기보다 밥, 김치, 나물 한 가지와 함께 내면 충분합니다.</p>
+
+<h2 class="wp-block-heading">실전 조리 순서</h2>
+<ol class="wp-block-list">
+<li><strong>레시피를 끝까지 읽습니다.</strong> 불리기, 재우기, 식히기에 필요한 시간을 먼저 확인합니다.</li>
+<li><strong>밥부터 짓습니다.</strong> 주 요리를 준비하는 동안 뚜껑을 덮은 채 뜸을 들일 수 있습니다.</li>
+<li><strong>차갑게 먹는 재료를 준비합니다.</strong> 양념장과 나물은 먼저 만들어 두어도 됩니다.</li>
+<li><strong>국과 찌개를 끓입니다.</strong> 끓는 동안 고명과 다른 재료를 손질하고 도구를 정리합니다.</li>
+<li><strong>빨리 익는 메뉴는 마지막에 조리합니다.</strong> 전, 불고기, 생선구이, 달걀부침은 완성 직후가 가장 맛있습니다.</li>
+</ol>
+
+<h2 class="wp-block-heading">초보자가 자주 하는 실수</h2>
+<ul class="wp-block-list">
+<li><strong>양념을 너무 많이 사는 것:</strong> 기본 재료 몇 가지의 역할을 익힌 뒤 필요한 제품을 추가합니다.</li>
+<li><strong>처음에만 간을 보는 것:</strong> 발효 양념은 끓이면서 맛이 진해지므로 마지막에 다시 확인합니다.</li>
+<li><strong>다른 고춧가루를 같은 양으로 바꾸는 것:</strong> 일반 칠리 플레이크는 더 맵거나 쓴맛이 날 수 있으므로 적은 양부터 넣습니다.</li>
+<li><strong>팬을 가득 채우는 것:</strong> 수분이 빠져나가지 못하면 불고기, 전, 생선이 노릇하게 구워지지 않습니다.</li>
+<li><strong>반찬을 너무 많이 만들려는 것:</strong> 밥, 주 요리 하나, 김치, 채소 반찬 하나면 충분한 집밥이 됩니다.</li>
+</ul>
+
+<h2 class="wp-block-heading">다음에 만들 메뉴</h2>
+<p class="wp-block-paragraph">다섯 가지 조리법이 익숙해지면 난이도보다 조리 방식에 따라 다음 메뉴를 골라 보세요. 얼큰한 쇠고기 국물은 <a href="/yukgaejang-kr/">육개장</a>, 부드러운 두부찌개는 <a href="/sundubu-jjigae-kr/">순두부찌개</a>, 차가운 면 요리는 <a href="/naengmyeon-kr/">냉면</a>으로 이어갈 수 있습니다. 양념과 식사 구성, 장보기 용어는 <a href="/ko/food-guide/">한식 가이드</a>에서 더 자세히 확인하세요.</p>
+'''
+    return f'''<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{html.escape(title)} | KFOOD Journal</title>
+  <meta name="description" content="{html.escape(description, quote=True)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="{canonical}">
+  <link rel="alternate" hreflang="en" href="{english_url}">
+  <link rel="alternate" hreflang="ko" href="{canonical}">
+  <link rel="alternate" hreflang="x-default" href="{english_url}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="{html.escape(title, quote=True)}">
+  <meta property="og:description" content="{html.escape(description, quote=True)}">
+  <meta property="og:url" content="{canonical}">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{schema}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/scoredream/SCoreDream.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/pages.css">
+  {ADSENSE_LOADER}
+</head>
+<body class="page-shell" data-alternate-url="{BEGINNER_GUIDE_PATH}">
+  <div data-site-header>{site_header("ko", BEGINNER_GUIDE_PATH)}</div>
+  <main><article class="article-shell">
+    <nav class="breadcrumbs" aria-label="이동 경로"><a href="/ko/">홈</a><span>›</span><a href="/ko/food-guide/">한식 가이드</a><span>›</span><span aria-current="page">{html.escape(title)}</span></nav>
+    <a class="article-back" href="/ko/food-guide/">← 한식 가이드로 돌아가기</a>
+    <header class="article-header"><div><p class="article-kicker">한식 요리 입문</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div></header>
+    <div class="article-body">{content}</div>
+    <section class="related-recipes"><p class="article-kicker">다음 요리 시작하기</p><div>
+      <a href="/dolsot-bibimbap-kr/"><span>01</span><strong>돌솥비빔밥</strong></a>
+      <a href="/yukgaejang-kr/"><span>02</span><strong>육개장</strong></a>
+      <a href="/godeungeo-gui/"><span>03</span><strong>고등어구이</strong></a>
+    </div></section>
+  </article></main>
+  <div data-site-footer>{site_footer("ko")}</div>
   <script src="/assets/shared.js"></script>
   <script src="/assets/ads.js"></script>
 </body>
@@ -803,7 +952,7 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
 
 
 def write_sitemap(posts: list[dict], posts_by_slug: dict[str, dict]) -> None:
-    static_pages = ["/", "/recipes/", "/stories/", "/food-guide/", BEGINNER_GUIDE_PATH, "/about/", "/contact/", "/privacy/", "/ko/", "/ko/recipes/", "/ko/stories/", "/ko/food-guide/", "/ko/about/", "/ko/contact/", "/ko/privacy/"]
+    static_pages = ["/", "/recipes/", "/stories/", "/food-guide/", BEGINNER_GUIDE_PATH, "/about/", "/contact/", "/privacy/", "/ko/", "/ko/recipes/", "/ko/stories/", "/ko/food-guide/", BEGINNER_GUIDE_KO_PATH, "/ko/about/", "/ko/contact/", "/ko/privacy/"]
     urls = [(SITE + path, BUILD_DATE) for path in static_pages]
     for post in posts:
         if post["slug"] in CANONICAL_ALIASES:
@@ -902,6 +1051,9 @@ def main() -> None:
     beginner_guide_dir = ROOT / BEGINNER_GUIDE_PATH.strip("/")
     beginner_guide_dir.mkdir(exist_ok=True)
     (beginner_guide_dir / "index.html").write_text(render_beginner_guide(), encoding="utf-8")
+    beginner_guide_ko_dir = ROOT / BEGINNER_GUIDE_KO_PATH.strip("/")
+    beginner_guide_ko_dir.mkdir(parents=True, exist_ok=True)
+    (beginner_guide_ko_dir / "index.html").write_text(render_beginner_guide_ko(), encoding="utf-8")
     write_sitemap(posts, posts_by_slug)
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kfood.bumkok.com/sitemap.xml\n", encoding="utf-8")
     (ROOT / "ads.txt").write_text("google.com, pub-5699330365644775, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")

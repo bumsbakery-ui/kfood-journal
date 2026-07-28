@@ -64,19 +64,32 @@ def main() -> None:
 
     sitemap = ElementTree.parse(ROOT / "sitemap.xml")
     locations = [node.text or "" for node in sitemap.findall(".//{*}loc")]
-    if len(locations) != 65:
-        fail(f"sitemap should contain 65 canonical URLs, found {len(locations)}")
+    if len(locations) != 66:
+        fail(f"sitemap should contain 66 canonical URLs, found {len(locations)}")
     if any("?p=" in location or "/feed/" in location or "sitemap_index" in location for location in locations):
         fail("sitemap contains a legacy or noncanonical URL")
     if "https://kfood.bumkok.com/korean-cooking-for-beginners/" not in locations:
         fail("sitemap is missing the beginner cooking guide")
+    if "https://kfood.bumkok.com/ko/korean-cooking-for-beginners/" not in locations:
+        fail("sitemap is missing the Korean beginner cooking guide")
 
     guide = (ROOT / "korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
     if '"@type":"Article"' not in guide:
         fail("beginner cooking guide is missing Article structured data")
+    if 'href="https://kfood.bumkok.com/ko/korean-cooking-for-beginners/"' not in guide:
+        fail("English beginner guide is missing its Korean hreflang")
     for target in ("dolsot-bibimbap", "yukgaejang", "godeungeo-gui"):
         if f'href="/{target}/"' not in guide:
             fail(f"beginner cooking guide is missing its {target} link")
+
+    korean_guide = (ROOT / "ko/korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
+    if '"@type":"Article"' not in korean_guide or '"inLanguage":"ko"' not in korean_guide:
+        fail("Korean beginner cooking guide is missing Korean Article structured data")
+    if 'data-alternate-url="/korean-cooking-for-beginners/"' not in korean_guide:
+        fail("Korean beginner guide is missing its English language switch")
+    for target in ("dolsot-bibimbap-kr", "yukgaejang-kr", "godeungeo-gui"):
+        if f'href="/{target}/"' not in korean_guide:
+            fail(f"Korean beginner cooking guide is missing its {target} link")
 
     enhancements = {
         "dolsot-bibimbap": "Dolsot Bibimbap Troubleshooting",
