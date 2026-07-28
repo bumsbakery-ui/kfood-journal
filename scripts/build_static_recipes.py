@@ -33,6 +33,134 @@ RECIPE_TIMES = {
     "kimchi-jjigae": {"cookTime": "PT23M"},
 }
 
+POST_OVERRIDES = {
+    "dolsot-bibimbap": {
+        "title": "Dolsot Bibimbap Recipe: Crispy Rice in a Korean Stone Bowl",
+        "excerpt": (
+            "Make dolsot bibimbap with seasoned vegetables, rice, egg, and gochujang, "
+            "plus practical steps for a crisp nurungji crust and safe stone-bowl handling."
+        ),
+        "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\">Some food historians believe it evolved from &#8220;Gujeolpan,&#8221; a royal court dish from the Joseon Dynasty. Either way, it beautifully reflects Korean food philosophy – harmoniously bringing together multiple ingredients in a single vessel.</p>",
+                "<p class=\"wp-block-paragraph\">The exact origin of the modern stone-bowl presentation is not settled. What matters in the kitchen is the method: a well-heated bowl keeps the meal hot and creates the crisp rice layer called nurungji.</p>",
+            ),
+            (
+                "<li>At restaurants, your bowl arrives pre-heated to around 350-400°F</li>",
+                "<li>At restaurants, the bowl arrives extremely hot; exact temperatures vary by bowl and stove.</li>",
+            ),
+            (
+                "<li><strong>Far-infrared emission</strong>: The stone actually emits rays that enhance the natural flavors of your food.</li>",
+                "<li><strong>Steady residual heat</strong>: The heavy bowl continues cooking the rice after it leaves the burner.</li>",
+            ),
+        ],
+        "append": """
+<h2 class="wp-block-heading">Dolsot Bibimbap Troubleshooting</h2>
+<ul class="wp-block-list">
+<li><strong>No crisp rice layer:</strong> Preheat the bowl gradually, use warm rice, and leave the assembled rice undisturbed for 2 to 3 minutes before mixing.</li>
+<li><strong>Rice burns before the toppings are warm:</strong> Lower the heat. A stone bowl stores heat, so medium or medium-low heat is usually enough once it is hot.</li>
+<li><strong>The bottom turns soggy:</strong> Drain and squeeze blanched vegetables well before adding them.</li>
+<li><strong>The egg stays too raw:</strong> Use a fully fried egg, or cover the bowl briefly so the residual heat cooks it further.</li>
+</ul>
+
+<h2 class="wp-block-heading">No Stone Bowl? Use Cast Iron</h2>
+<p class="wp-block-paragraph">A small cast-iron skillet will not produce exactly the same table-side experience, but it can make a good crisp rice crust. Brush the hot skillet lightly with oil, press in warm rice, add the toppings, and cook over medium-low heat until the edges audibly sizzle. Protect the table with a heatproof trivet.</p>
+
+<h2 class="wp-block-heading">Stone Bowl Safety</h2>
+<p class="wp-block-paragraph">Check the manufacturer’s instructions before using a bowl on direct heat. Warm stone cookware gradually, keep it away from cold water while hot, and use dry oven mitts. The bowl remains hot long after serving. Use a fully cooked egg for diners who avoid raw or undercooked eggs.</p>
+
+<p class="wp-block-paragraph">New to Korean cooking? Start with our <a href="/korean-cooking-for-beginners/">five-dish Korean cooking plan</a>, or compare this recipe with <a href="/bibimbap/">classic bibimbap</a> and <a href="/bulgogi/">bulgogi</a>.</p>
+""",
+    },
+    "yukgaejang": {
+        "title": "Yukgaejang Recipe: Spicy Korean Beef Soup",
+        "excerpt": (
+            "Cook yukgaejang, a spicy Korean beef soup with shredded brisket, green onion, "
+            "bean sprouts, and gochugaru, with substitutions and troubleshooting tips."
+        ),
+        "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\">Yukgaejang evolved as a variation of Seolleongtang (ox bone soup) during the Joseon Dynasty, originally called &#8220;Yukgye&#8221; or &#8220;Yukgi.&#8221; It began as a nourishing dish enjoyed by the royal family and nobility but gradually became beloved by the general population. Traditional Yukgaejang was characterized by its rich beef broth simmered for hours, enhanced with spicy red pepper powder for an invigorating kick. Historically, various beef parts including offal (tripe, lungs, intestines) were used, but modern versions primarily use brisket or shank. Today, it&#8217;s a popular hangover remedy and a go-to dish when Koreans need physical and spiritual fortification.</p>",
+                "<p class=\"wp-block-paragraph\">Yukgaejang is a Korean spicy beef soup built from a clear beef broth, shredded meat, green onion, vegetables, garlic, and gochugaru. Recipes vary by household and region; brisket and shank are practical modern choices because they become tender enough to shred while flavoring the broth.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">A bowl of Yukgaejang is much more than just a meal—it&#8217;s a warm embrace offering strength when you&#8217;re feeling weak, a spicy revival for tired bodies, and a source of energy rooted in centuries of Korean culinary wisdom. The moment the fiery broth touches your lips and travels down your throat, a comforting warmth spreads throughout your body, instilling confidence to overcome any challenge. Why not share this revitalizing experience with loved ones after a long, tiring day or during the depths of winter?</p>",
+                "<p class=\"wp-block-paragraph\">Yukgaejang is especially satisfying when served hot with plain rice and a crisp side dish such as kkakdugi. Let leftovers cool promptly, refrigerate them in a covered container, and reheat only the portion you plan to eat.</p>",
+            ),
+        ],
+        "append": """
+<h2 class="wp-block-heading">Ingredient Substitutions That Keep the Soup Balanced</h2>
+<ul class="wp-block-list">
+<li><strong>No gosari:</strong> Use sliced shiitake or oyster mushrooms for a chewy, savory element. The result is not traditional, but it keeps the soup satisfying.</li>
+<li><strong>No taro stems:</strong> Leave them out and add more green onion or mushrooms instead.</li>
+<li><strong>No brisket:</strong> Beef shank or chuck works when simmered until it shreds easily.</li>
+<li><strong>Less heat:</strong> Reduce the gochugaru, but keep the garlic, soy sauce, and green onion so the broth still has depth.</li>
+</ul>
+
+<h2 class="wp-block-heading">How to Keep Gochugaru from Turning Bitter</h2>
+<p class="wp-block-paragraph">Gochugaru can scorch quickly in hot oil. Warm the oil over low heat, remove the pot from direct heat if necessary, and stir in the pepper flakes only until fragrant. Add broth before the flakes darken. If the soup tastes harsh, dilute it with unsalted broth and correct the seasoning at the end.</p>
+
+<h2 class="wp-block-heading">Yukgaejang Troubleshooting</h2>
+<ul class="wp-block-list">
+<li><strong>Cloudy or greasy broth:</strong> Keep the beef at a gentle simmer and skim foam and excess fat as it cooks.</li>
+<li><strong>Tough beef:</strong> Continue simmering before shredding; the meat should separate with light pressure.</li>
+<li><strong>Flat flavor:</strong> Adjust soup soy sauce and salt separately. Soy sauce adds aroma and color, while salt raises seasoning without darkening the broth.</li>
+<li><strong>Soft bean sprouts:</strong> Add them near the end and avoid prolonged reheating.</li>
+</ul>
+
+<p class="wp-block-paragraph">Build confidence with the <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a>, then try <a href="/seolleongtang/">seolleongtang</a> for a mild beef soup or <a href="/sundubu-jjigae/">sundubu jjigae</a> for another spicy broth.</p>
+""",
+    },
+    "godeungeo-gui": {
+        "title": "Godeungeo Gui Recipe: Korean Grilled Mackerel with Crispy Skin",
+        "excerpt": (
+            "Make Korean grilled mackerel with crisp skin and juicy flesh using a grill, "
+            "skillet, oven, or air fryer, with practical tips for salting, odor, and bones."
+        ),
+        "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\">Confession time! I used to be one of those people who thought fish was either &#8220;expensive sushi&#8221; or &#8220;boring dinner protein.&#8221; Then I stumbled into a Korean BBQ place that had this whole section dedicated to grilled fish, and out of curiosity (and peer pressure from Korean friends), I ordered godeungeo-gui.</p>",
+                "<p class=\"wp-block-paragraph\">Godeungeo gui is a straightforward Korean preparation that relies on the mackerel’s natural richness. Salting seasons the flesh and draws moisture from the skin; thorough drying and steady heat do the rest.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">When it arrived &#8211; this beautifully charred, whole fish staring at me with its crispy skin glistening &#8211; I&#8217;ll admit I was a little intimidated. But that first bite? <strong>TOTAL FISH REVELATION.</strong> The skin was crispy like bacon, the flesh was buttery and flaky, and there was this incredible smoky, salty flavor that was completely different from any fish I&#8217;d ever had!</p>",
+                "<p class=\"wp-block-paragraph\">For easier serving, ask the fishmonger to butterfly the mackerel or use skin-on fillets. Whole fish offers a traditional presentation, while fillets cook faster and make portioning simpler.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Why Your Body Will Thank You for This Fish Choice</h2>",
+                "<h2 class=\"wp-block-heading\">Serving and Food-Safety Notes</h2>",
+            ),
+            (
+                "<li><strong>Omega-3 powerhouse</strong> for heart and brain health</li>\n\n\n\n<li><strong>High-quality protein</strong> with all essential amino acids</li>\n\n\n\n<li><strong>Vitamin D</strong> for bone health and immune function</li>\n\n\n\n<li><strong>B vitamins</strong> for energy and nervous system support</li>\n\n\n\n<li><strong>Selenium</strong> for antioxidant protection</li>\n\n\n\n<li><strong>Low mercury</strong> compared to larger fish species</li>",
+                "<li>Buy chilled fish from a reliable seller and keep it refrigerated until cooking.</li>\n\n\n\n<li>Cook until the thickest part is opaque and flakes easily; an instant-read thermometer should reach 145°F (63°C).</li>\n\n\n\n<li>Mackerel has many fine bones. Check each portion carefully, especially when serving children or older diners.</li>\n\n\n\n<li>Serve immediately for the crispest skin and refrigerate leftovers promptly.</li>",
+            ),
+        ],
+        "append": """
+<h2 class="wp-block-heading">Four Reliable Ways to Cook Godeungeo Gui</h2>
+<ul class="wp-block-list">
+<li><strong>Outdoor grill:</strong> Oil clean grates, start skin-side down over medium-high heat, and turn only when the fish releases easily.</li>
+<li><strong>Skillet:</strong> Use a thin film of neutral oil over medium heat. Press a fillet gently for the first 20 seconds so the skin stays flat.</li>
+<li><strong>Oven:</strong> Roast skin-side up at 425°F (220°C) until the thickest part flakes, usually 10 to 15 minutes depending on thickness. Broil briefly only if more browning is needed.</li>
+<li><strong>Air fryer:</strong> Cook skin-side up at 390°F (200°C) and begin checking at 8 minutes. Avoid overcrowding so hot air can reach the skin.</li>
+</ul>
+
+<h2 class="wp-block-heading">How to Reduce Fish Odor Without Drying the Mackerel</h2>
+<p class="wp-block-paragraph">Remove the dark bloodline and any remaining membrane, pat the fish very dry, and keep the cooking area well ventilated. A short salting period improves texture, but leaving salt on too long can pull out too much moisture. Citrus is best added after cooking; a long acidic marinade can soften the surface.</p>
+
+<h2 class="wp-block-heading">Crispy-Skin Troubleshooting</h2>
+<ul class="wp-block-list">
+<li><strong>The fish sticks:</strong> The surface or cooking grate was not hot and oiled enough, or the fish was moved before the skin released.</li>
+<li><strong>The skin is pale:</strong> Dry it more thoroughly and avoid crowding the pan.</li>
+<li><strong>The flesh is dry:</strong> Begin checking early and remove the fish as soon as the thickest part is cooked.</li>
+</ul>
+
+<p class="wp-block-paragraph">For a simple Korean meal, serve the fish with rice, kimchi, and one vegetable side. The <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a> explains how to build the rest of the table.</p>
+""",
+    },
+}
+
+BEGINNER_GUIDE_PATH = "/korean-cooking-for-beginners/"
+
 # Historical duplicate URLs remain available, while their search signals are
 # consolidated to the newer canonical copy.
 CANONICAL_ALIASES = {
@@ -191,6 +319,20 @@ def clean_content(value: str) -> str:
     parser.feed(value or "")
     parser.close()
     return "".join(parser.output).strip()
+
+
+def apply_post_overrides(post: dict) -> dict:
+    override = POST_OVERRIDES.get(post["slug"])
+    if not override:
+        return post
+    updated = dict(post)
+    updated["title"] = override["title"]
+    updated["excerpt"] = override["excerpt"]
+    content = updated.get("content", "")
+    for old, new in override.get("replacements", []):
+        content = content.replace(old, new)
+    updated["content"] = content + override.get("append", "")
+    return updated
 
 
 def unique_text(items: list[str], limit: int) -> list[str]:
@@ -464,6 +606,145 @@ def render(post: dict, posts_by_slug: dict[str, dict]) -> str:
 '''
 
 
+def render_beginner_guide() -> str:
+    canonical = SITE + BEGINNER_GUIDE_PATH
+    title = "Korean Cooking for Beginners: A 5-Dish Starter Plan"
+    description = (
+        "Learn Korean cooking through five approachable dishes, a compact pantry, "
+        "a practical cooking order, and direct links to tested step-by-step recipes."
+    )
+    schema = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": canonical + "#article",
+            "mainEntityOfPage": canonical,
+            "headline": title,
+            "description": description,
+            "author": {
+                "@type": "Organization",
+                "name": "KFOOD Journal",
+                "url": SITE + "/about/",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "KFOOD Journal",
+                "url": SITE + "/",
+            },
+            "datePublished": "2026-07-28",
+            "dateModified": "2026-07-28",
+            "inLanguage": "en",
+        },
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).replace("</", "<\\/")
+    content = f'''
+<p class="wp-block-paragraph">Korean cooking becomes much easier when you stop trying to learn an entire cuisine at once. Begin with a small pantry and five dishes that teach different techniques: mixing a sauce, seasoning vegetables, simmering a broth, browning marinated meat, and managing heat.</p>
+
+<p class="wp-block-paragraph">This plan is designed for a first week of cooking. You do not need every Korean ingredient, a crowded table of side dishes, or special cookware. Read each recipe before shopping, check labels for allergens, and adjust seasoning at the end because soy sauce, kimchi, doenjang, and gochujang vary by brand.</p>
+
+<h2 class="wp-block-heading">The Small Korean Pantry to Buy First</h2>
+<ul class="wp-block-list">
+<li><strong>Short- or medium-grain rice:</strong> the neutral base that balances stronger sauces and soups.</li>
+<li><strong>Ganjang (soy sauce):</strong> use the type named in a recipe when possible. Regular brewed soy sauce is the most flexible first bottle.</li>
+<li><strong>Doenjang:</strong> fermented soybean paste for stews, soups, and vegetable seasoning.</li>
+<li><strong>Gochujang:</strong> fermented chile paste that adds heat, sweetness, salt, and body.</li>
+<li><strong>Gochugaru:</strong> Korean red pepper flakes for direct chile flavor without the thickness of gochujang.</li>
+<li><strong>Sesame oil and toasted sesame seeds:</strong> fragrant finishing ingredients; a little is usually enough.</li>
+<li><strong>Garlic and green onion:</strong> the everyday aromatics that appear across the five dishes below.</li>
+</ul>
+
+<p class="wp-block-paragraph">If you cook only one or two recipes, buy the ingredients for those dishes rather than the full list. Store every product according to its package directions and use clean, dry utensils for fermented pastes.</p>
+
+<h2 class="wp-block-heading">Dish 1: Bibimbap Teaches Balance and Preparation</h2>
+<p class="wp-block-paragraph"><a href="/bibimbap/">Classic bibimbap</a> is a useful first dish because the individual parts are forgiving. Prepare rice, season two or three vegetables separately, add an egg or another protein, and mix with gochujang at the table. The goal is not a perfect restaurant arrangement; it is learning how salty, sweet, spicy, fresh, and toasted flavors balance in one bowl.</p>
+
+<p class="wp-block-paragraph">After you are comfortable with the basic bowl, try <a href="/dolsot-bibimbap/">dolsot bibimbap</a>. The hot bowl adds a second lesson: moisture control and patient heat create the crisp nurungji layer.</p>
+
+<h2 class="wp-block-heading">Dish 2: Pajeon Teaches Batter and Pan Heat</h2>
+<p class="wp-block-paragraph"><a href="/pajeon/">Pajeon</a> shows how pan temperature changes texture. Start with a thin layer of batter and enough oil to make good contact with the pan. Wait until the underside is set before turning. If the center stays soft while the outside darkens, make the next pancake thinner or lower the heat slightly.</p>
+
+<p class="wp-block-paragraph">Serve it with a simple soy-and-vinegar dipping sauce. This is also a practical place to use leftover green onions and small amounts of vegetables from other recipes.</p>
+
+<h2 class="wp-block-heading">Dish 3: Bulgogi Teaches Marinade Control</h2>
+<p class="wp-block-paragraph"><a href="/bulgogi/">Bulgogi</a> introduces a soy-based marinade and fast cooking. Slice the meat thinly and do not overcrowd the pan. Too much liquid or too many pieces at once will steam the meat instead of browning it. Cook in batches and add delicate vegetables near the end.</p>
+
+<p class="wp-block-paragraph">Taste the cooked marinade before adding extra sugar or soy sauce. A balanced bulgogi should be savory and lightly sweet, not covered by a thick sauce.</p>
+
+{ad_zone("content")}
+
+<h2 class="wp-block-heading">Dish 4: Doenjang Jjigae Teaches Layered Seasoning</h2>
+<p class="wp-block-paragraph"><a href="/doenjang-jjigae/">Doenjang jjigae</a> is a compact lesson in building broth. Dissolve a modest amount of doenjang first, simmer firm vegetables until nearly tender, then add quick-cooking ingredients such as tofu and green onion. Because doenjang differs greatly by brand, make the final salt adjustment only after the stew has simmered.</p>
+
+<p class="wp-block-paragraph">If dried anchovy is unavailable or unsuitable for your diet, kelp and dried mushrooms can provide a satisfying alternative broth. The flavor will be different, but the cooking sequence remains useful.</p>
+
+<h2 class="wp-block-heading">Dish 5: Godeungeo Gui Teaches Timing</h2>
+<p class="wp-block-paragraph"><a href="/godeungeo-gui/">Godeungeo gui</a> is deliberately simple: salt, dry the surface, and cook until the skin is crisp and the thickest part of the fish flakes. It teaches one of the most transferable kitchen habits—preparing the ingredient correctly before heat is applied.</p>
+
+<p class="wp-block-paragraph">Use skin-on fillets if a whole fish feels difficult. Serve with rice, kimchi, and one seasoned vegetable rather than trying to prepare a large restaurant-style spread.</p>
+
+<h2 class="wp-block-heading">A Practical Cooking Order</h2>
+<ol class="wp-block-list">
+<li><strong>Read the whole recipe.</strong> Note soaking, marinating, and cooling time before you begin.</li>
+<li><strong>Cook rice first.</strong> It can rest covered while you prepare the main dish.</li>
+<li><strong>Make cold or room-temperature components.</strong> Dipping sauces and seasoned vegetables can wait.</li>
+<li><strong>Start soups and stews.</strong> Use their simmering time to prepare garnishes and wash tools.</li>
+<li><strong>Cook fast items last.</strong> Pancakes, bulgogi, grilled fish, and fried eggs are best served immediately.</li>
+</ol>
+
+<h2 class="wp-block-heading">Common Beginner Mistakes</h2>
+<ul class="wp-block-list">
+<li><strong>Buying too many sauces:</strong> learn the role of a few staples before adding specialty products.</li>
+<li><strong>Seasoning only at the beginning:</strong> fermented ingredients concentrate as they simmer, so taste again near the end.</li>
+<li><strong>Substituting chile flakes one-for-one:</strong> ordinary flakes may be hotter or more bitter than gochugaru. Begin with less.</li>
+<li><strong>Crowding the pan:</strong> excess moisture prevents browning in bulgogi, pancakes, and fish.</li>
+<li><strong>Trying to make too many banchan:</strong> rice, one main dish, kimchi, and one vegetable side already make a complete home meal.</li>
+</ul>
+
+<h2 class="wp-block-heading">Where to Go Next</h2>
+<p class="wp-block-paragraph">Once these five techniques feel familiar, choose the next recipe by method rather than difficulty. For a spicy beef broth, cook <a href="/yukgaejang/">yukgaejang</a>. For a soft-tofu stew, try <a href="/sundubu-jjigae/">sundubu jjigae</a>. For a cold noodle lesson, make <a href="/naengmyeon/">naengmyeon</a>. You can also review the broader <a href="/food-guide/">Korean food guide</a> for seasoning, meal structure, and shopping terminology.</p>
+'''
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{html.escape(title)} | KFOOD Journal</title>
+  <meta name="description" content="{html.escape(description, quote=True)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="{canonical}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{html.escape(title, quote=True)}">
+  <meta property="og:description" content="{html.escape(description, quote=True)}">
+  <meta property="og:url" content="{canonical}">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{schema}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/scoredream/SCoreDream.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/assets/pages.css">
+  {ADSENSE_LOADER}
+</head>
+<body class="page-shell" data-alternate-url="/ko/food-guide/">
+  <div data-site-header>{site_header("en", "/ko/food-guide/")}</div>
+  <main><article class="article-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/food-guide/">Food Guide</a><span>›</span><span aria-current="page">{html.escape(title)}</span></nav>
+    <a class="article-back" href="/food-guide/">← Back to the food guide</a>
+    <header class="article-header"><div><p class="article-kicker">KOREAN COOKING 101</p><h1 class="article-title">{html.escape(title)}</h1><p class="article-meta">2026-07-28 · KFOOD JOURNAL</p></div></header>
+    <div class="article-body">{content}</div>
+    <section class="related-recipes"><p class="article-kicker">START COOKING</p><div>
+      <a href="/dolsot-bibimbap/"><span>01</span><strong>Dolsot Bibimbap</strong></a>
+      <a href="/yukgaejang/"><span>02</span><strong>Yukgaejang</strong></a>
+      <a href="/godeungeo-gui/"><span>03</span><strong>Godeungeo Gui</strong></a>
+    </div></section>
+  </article></main>
+  <div data-site-footer>{site_footer("en")}</div>
+  <script src="/assets/shared.js"></script>
+  <script src="/assets/ads.js"></script>
+</body>
+</html>
+'''
+
+
 def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
     ko = lang == "ko"
     selected = [post for post in posts if post["language"] == lang and post["slug"] not in CANONICAL_ALIASES]
@@ -522,7 +803,7 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
 
 
 def write_sitemap(posts: list[dict], posts_by_slug: dict[str, dict]) -> None:
-    static_pages = ["/", "/recipes/", "/stories/", "/food-guide/", "/about/", "/contact/", "/privacy/", "/ko/", "/ko/recipes/", "/ko/stories/", "/ko/food-guide/", "/ko/about/", "/ko/contact/", "/ko/privacy/"]
+    static_pages = ["/", "/recipes/", "/stories/", "/food-guide/", BEGINNER_GUIDE_PATH, "/about/", "/contact/", "/privacy/", "/ko/", "/ko/recipes/", "/ko/stories/", "/ko/food-guide/", "/ko/about/", "/ko/contact/", "/ko/privacy/"]
     urls = [(SITE + path, BUILD_DATE) for path in static_pages]
     for post in posts:
         if post["slug"] in CANONICAL_ALIASES:
@@ -601,7 +882,10 @@ def hydrate_static_pages() -> None:
 
 
 def main() -> None:
-    posts = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    posts = [
+        apply_post_overrides(post)
+        for post in json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    ]
     posts_by_slug = {post["slug"]: post for post in posts}
     for post in posts:
         directory = ROOT / unquote(post["slug"])
@@ -615,6 +899,9 @@ def main() -> None:
     (ROOT / "korean-recipes-en/index.html").write_text(render_archive(posts, "en", SITE + "/recipes/"), encoding="utf-8")
     (ROOT / "korean-recipes-kr").mkdir(exist_ok=True)
     (ROOT / "korean-recipes-kr/index.html").write_text(render_archive(posts, "ko", SITE + "/ko/recipes/"), encoding="utf-8")
+    beginner_guide_dir = ROOT / BEGINNER_GUIDE_PATH.strip("/")
+    beginner_guide_dir.mkdir(exist_ok=True)
+    (beginner_guide_dir / "index.html").write_text(render_beginner_guide(), encoding="utf-8")
     write_sitemap(posts, posts_by_slug)
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kfood.bumkok.com/sitemap.xml\n", encoding="utf-8")
     (ROOT / "ads.txt").write_text("google.com, pub-5699330365644775, DIRECT, f08c47fec0942fa0\n", encoding="utf-8")

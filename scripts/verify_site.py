@@ -64,10 +64,29 @@ def main() -> None:
 
     sitemap = ElementTree.parse(ROOT / "sitemap.xml")
     locations = [node.text or "" for node in sitemap.findall(".//{*}loc")]
-    if len(locations) != 64:
-        fail(f"sitemap should contain 64 canonical URLs, found {len(locations)}")
+    if len(locations) != 65:
+        fail(f"sitemap should contain 65 canonical URLs, found {len(locations)}")
     if any("?p=" in location or "/feed/" in location or "sitemap_index" in location for location in locations):
         fail("sitemap contains a legacy or noncanonical URL")
+    if "https://kfood.bumkok.com/korean-cooking-for-beginners/" not in locations:
+        fail("sitemap is missing the beginner cooking guide")
+
+    guide = (ROOT / "korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
+    if '"@type":"Article"' not in guide:
+        fail("beginner cooking guide is missing Article structured data")
+    for target in ("dolsot-bibimbap", "yukgaejang", "godeungeo-gui"):
+        if f'href="/{target}/"' not in guide:
+            fail(f"beginner cooking guide is missing its {target} link")
+
+    enhancements = {
+        "dolsot-bibimbap": "Dolsot Bibimbap Troubleshooting",
+        "yukgaejang": "Yukgaejang Troubleshooting",
+        "godeungeo-gui": "Crispy-Skin Troubleshooting",
+    }
+    for slug, heading in enhancements.items():
+        value = (ROOT / slug / "index.html").read_text(encoding="utf-8")
+        if heading not in value or 'href="/korean-cooking-for-beginners/"' not in value:
+            fail(f"{slug} is missing its editorial enhancement or beginner-guide link")
 
     for relative in (
         "index.html",
