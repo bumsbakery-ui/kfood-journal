@@ -36,6 +36,7 @@ RECIPE_TIMES = {
 POST_OVERRIDES = {
     "dolsot-bibimbap": {
         "title": "Dolsot Bibimbap Recipe: Crispy Rice in a Korean Stone Bowl",
+        "seo_title": "Dolsot Bibimbap Recipe: Crispy Rice | KFOOD Journal",
         "excerpt": (
             "Make dolsot bibimbap with seasoned vegetables, rice, egg, and gochujang, "
             "plus practical steps for a crisp nurungji crust and safe stone-bowl handling."
@@ -74,6 +75,7 @@ POST_OVERRIDES = {
     },
     "yukgaejang": {
         "title": "Yukgaejang Recipe: Spicy Korean Beef Soup",
+        "seo_title": "Yukgaejang Recipe: Spicy Korean Beef Soup | KFOOD Journal",
         "excerpt": (
             "Cook yukgaejang, a spicy Korean beef soup with shredded brisket, green onion, "
             "bean sprouts, and gochugaru, with substitutions and troubleshooting tips."
@@ -109,6 +111,28 @@ POST_OVERRIDES = {
 </ul>
 
 <p class="wp-block-paragraph">Build confidence with the <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a>, then try <a href="/seolleongtang/">seolleongtang</a> for a mild beef soup or <a href="/sundubu-jjigae/">sundubu jjigae</a> for another spicy broth.</p>
+""",
+    },
+    "galbitang": {
+        "title": "Galbitang Recipe: Clear Korean Short Rib Soup",
+        "seo_title": "Galbitang Recipe: Korean Short Rib Soup | KFOOD Journal",
+        "excerpt": (
+            "Make galbitang with tender beef short ribs and a clear Korean broth, "
+            "with blanching, low-simmer, seasoning, storage, and serving tips."
+        ),
+        "append": """
+<h2 class="wp-block-heading">Galbitang Troubleshooting</h2>
+<ul class="wp-block-list">
+<li><strong>Cloudy broth:</strong> Blanch and rinse the ribs first, then keep the fresh broth at a gentle simmer instead of a rolling boil.</li>
+<li><strong>Greasy soup:</strong> Skim during cooking, or chill the strained broth and lift off the hardened fat before reheating.</li>
+<li><strong>Tough short ribs:</strong> Continue simmering until a fork enters the meat easily. Cooking time depends on rib thickness.</li>
+<li><strong>Weak flavor:</strong> Reduce the strained broth slightly before adding more salt. Seasoning a watery broth more heavily will not create the same depth.</li>
+</ul>
+
+<h2 class="wp-block-heading">Serving, Storage, and Reheating</h2>
+<p class="wp-block-paragraph">Serve galbitang with plain rice, sliced green onion, and a crisp kimchi such as kkakdugi. Cool leftovers promptly and refrigerate the ribs in the broth so the meat stays moist. Reheat only the portion you plan to eat and bring the broth to a full simmer before serving.</p>
+
+<p class="wp-block-paragraph">Compare this clear short-rib broth with mild <a href="/seolleongtang/">seolleongtang</a> and spicy <a href="/yukgaejang/">yukgaejang</a>. If this is your first week cooking Korean food, begin with the <a href="/korean-cooking-for-beginners/">five-dish Korean cooking starter plan</a>.</p>
 """,
     },
     "godeungeo-gui": {
@@ -486,6 +510,9 @@ def recipe_links(post: dict, posts: list[dict]) -> tuple[str, str]:
 
 
 def seo_title(post: dict) -> str:
+    override = POST_OVERRIDES.get(post["slug"], {})
+    if override.get("seo_title"):
+        return override["seo_title"]
     full = clean_text(post["title"]).strip("\"“”")
     dish = full.split(":", 1)[0].strip("\"“”")
     if post["language"].startswith("ko"):

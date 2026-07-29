@@ -98,6 +98,7 @@ def main() -> None:
     enhancements = {
         "dolsot-bibimbap": "Dolsot Bibimbap Troubleshooting",
         "yukgaejang": "Yukgaejang Troubleshooting",
+        "galbitang": "Galbitang Troubleshooting",
         "godeungeo-gui": "Crispy-Skin Troubleshooting",
     }
     for slug, heading in enhancements.items():
@@ -118,6 +119,26 @@ def main() -> None:
         value = (ROOT / relative).read_text(encoding="utf-8")
         if "data-ad-placement=" not in value:
             fail(f"{relative} has no static content ad unit")
+
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    if "Korean Recipes &amp; Cooking Guides | KFOOD Journal" not in home:
+        fail("homepage is missing its search-focused title")
+    if home.count('href="/korean-cooking-for-beginners/"') < 2:
+        fail("homepage needs prominent links to the beginner cooking guide")
+
+    korean_home = (ROOT / "ko/index.html").read_text(encoding="utf-8")
+    if korean_home.count('href="/ko/korean-cooking-for-beginners/"') < 2:
+        fail("Korean homepage needs prominent links to the Korean beginner guide")
+
+    expected_titles = {
+        "dolsot-bibimbap": "Dolsot Bibimbap Recipe: Crispy Rice | KFOOD Journal",
+        "yukgaejang": "Yukgaejang Recipe: Spicy Korean Beef Soup | KFOOD Journal",
+        "galbitang": "Galbitang Recipe: Korean Short Rib Soup | KFOOD Journal",
+    }
+    for slug, title in expected_titles.items():
+        value = (ROOT / slug / "index.html").read_text(encoding="utf-8")
+        if f"<title>{title}</title>" not in value:
+            fail(f"{slug} has an unexpected search title")
 
     print(
         f"Verified {len(html_files)} HTML files, {len(POSTS)} recipe schemas, "
