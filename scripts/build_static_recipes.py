@@ -569,10 +569,20 @@ def recipe_schema(post: dict, canonical: str) -> str:
     if ingredients:
         data["recipeIngredient"] = ingredients
     if instructions:
-        data["recipeInstructions"] = [
-            {"@type": "HowToStep", "position": index, "text": text}
-            for index, text in enumerate(instructions, 1)
-        ]
+        steps = []
+        for index, text in enumerate(instructions, 1):
+            step_name = text if len(text) <= 110 else text[:107].rsplit(" ", 1)[0] + "…"
+            steps.append(
+                {
+                    "@type": "HowToStep",
+                    "position": index,
+                    "name": step_name,
+                    "text": text,
+                    "url": f"{canonical}#recipe-step-{index}",
+                    "image": image,
+                }
+            )
+        data["recipeInstructions"] = steps
     data.update(RECIPE_TIMES.get(post["slug"], {}))
     return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 

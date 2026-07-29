@@ -55,6 +55,14 @@ def main() -> None:
         data = recipe_schema(value)
         if not data.get("recipeIngredient") or not data.get("recipeInstructions"):
             fail(f"{post['slug']} is missing recipe ingredients or instructions")
+        for index, step in enumerate(data["recipeInstructions"], 1):
+            if step.get("@type") != "HowToStep":
+                fail(f"{post['slug']} instruction {index} is not a HowToStep")
+            for field in ("name", "text", "url", "image"):
+                if not step.get(field):
+                    fail(f"{post['slug']} instruction {index} is missing {field}")
+            if step["url"] != f"{data['mainEntityOfPage']}#recipe-step-{index}":
+                fail(f"{post['slug']} instruction {index} has an unexpected URL")
         if 'id="primary-nav"' not in value:
             fail(f"{post['slug']} has no crawlable primary navigation")
         if 'class="breadcrumbs"' not in value or 'class="related-recipes"' not in value:
