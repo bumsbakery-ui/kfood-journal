@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "updated_at": "2026-08-01",
+  "purpose": "HTTP-only monitoring targets. Fetch these URLs without executing JavaScript so recurring audits do not create AdSense or GA traffic.",
+  "targets": [
+    {
+      "url": "https://kfood.bumkok.com/",
+      "status": 200,
+      "canonical": "https://kfood.bumkok.com/"
+    },
+    {
+      "url": "https://kfood.bumkok.com/ko/",
+      "status": 200,
+      "canonical": "https://kfood.bumkok.com/ko/"
+    },
+    {
+      "url": "https://kfood.bumkok.com/korean-cooking-for-beginners/",
+      "status": 200,
+      "canonical": "https://kfood.bumkok.com/korean-cooking-for-beginners/"
+    },
+    {
+      "url": "https://kfood.bumkok.com/ko/korean-cooking-for-beginners/",
+      "status": 200,
+      "canonical": "https://kfood.bumkok.com/ko/korean-cooking-for-beginners/"
+    },
+    {
+      "url": "https://kfood.bumkok.com/robots.txt",
+      "status": 200
+    },
+    {
+      "url": "https://kfood.bumkok.com/ads.txt",
+      "status": 200
+    },
+    {
+      "url": "https://kfood.bumkok.com/sitemap.xml",
+      "status": 200
+    }
+  ]
+}

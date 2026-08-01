@@ -81,6 +81,27 @@ def main() -> None:
     if "https://kfood.bumkok.com/ko/korean-cooking-for-beginners/" not in locations:
         fail("sitemap is missing the Korean beginner cooking guide")
 
+    audit_manifest = json.loads((ROOT / "audit-manifest.json").read_text(encoding="utf-8"))
+    audit_targets = audit_manifest.get("targets", [])
+    if len(audit_targets) < 7:
+        fail("audit manifest is missing HTTP-only monitoring targets")
+    if any(target.get("status") != 200 for target in audit_targets):
+        fail("audit manifest contains a non-200 expected status")
+    audit_urls = {target.get("url") for target in audit_targets}
+    for required in (
+        "https://kfood.bumkok.com/",
+        "https://kfood.bumkok.com/robots.txt",
+        "https://kfood.bumkok.com/ads.txt",
+        "https://kfood.bumkok.com/sitemap.xml",
+    ):
+        if required not in audit_urls:
+            fail(f"audit manifest is missing {required}")
+
+    analytics = (ROOT / "assets/analytics.js").read_text(encoding="utf-8")
+    for event_name in ("engaged_reader", "language_switch", "outbound_click"):
+        if event_name not in analytics:
+            fail(f"analytics is missing the {event_name} event")
+
     guide = (ROOT / "korean-cooking-for-beginners/index.html").read_text(encoding="utf-8")
     if '"@type":"Article"' not in guide:
         fail("beginner cooking guide is missing Article structured data")
@@ -150,7 +171,7 @@ def main() -> None:
 
     print(
         f"Verified {len(html_files)} HTML files, {len(POSTS)} recipe schemas, "
-        f"{len(locations)} sitemap URLs and static AdSense markup."
+        f"{len(locations)} sitemap URLs, HTTP-only audit targets and static AdSense markup."
     )
 
 
