@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import unquote
 from xml.etree import ElementTree
@@ -22,6 +23,18 @@ TARGET_RECIPES = {
     "bibim-naengmyeon",
 }
 LOADER = "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+CURRENT_YEAR = date.today().year
+HYPE_PHRASES = (
+    "perfect guide",
+    "ultimate guide",
+    "best ever",
+    "완벽 가이드",
+    "무조건 추천",
+    "최강",
+    "끝판왕",
+    "인생템",
+    "역대급",
+)
 
 
 def fail(message: str) -> None:
@@ -44,6 +57,28 @@ def main() -> None:
         fail("no HTML files found")
     for path in html_files:
         value = path.read_text(encoding="utf-8")
+        title_match = re.search(r"<title[^>]*>(.*?)</title>", value, re.I | re.S)
+        title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip() if title_match else ""
+        stale_years = [year for year in re.findall(r"20\d{2}", title) if int(year) < CURRENT_YEAR]
+        if stale_years:
+            fail(f"{path.relative_to(ROOT)} title contains stale year(s): {', '.join(stale_years)}")
+        for phrase in HYPE_PHRASES:
+            if phrase in title.lower():
+                fail(f"{path.relative_to(ROOT)} title contains hype phrase: {phrase}")
+
+        affiliate_anchors = re.findall(
+            r'<a\b(?=[^>]*href=["\'][^"\']*(?:link\.coupang\.com|coupang\.com)[^"\']*["\'])[^>]*>',
+            value,
+            re.I,
+        )
+        for anchor in affiliate_anchors:
+            rel_match = re.search(r'\brel=["\']([^"\']*)["\']', anchor, re.I)
+            rel_tokens = set(rel_match.group(1).lower().split()) if rel_match else set()
+            if not {"nofollow", "sponsored", "noopener"}.issubset(rel_tokens):
+                fail(f"{path.relative_to(ROOT)} has an unlabelled affiliate link")
+        if affiliate_anchors and "쿠팡 파트너스 활동의 일환" not in value:
+            fail(f"{path.relative_to(ROOT)} is missing its affiliate disclosure")
+
         if value.count(LOADER) != 1:
             fail(f"{path.relative_to(ROOT)} must have exactly one static AdSense loader")
         if value.index(LOADER) > value.index("</head>"):
@@ -171,7 +206,7 @@ def main() -> None:
 
     print(
         f"Verified {len(html_files)} HTML files, {len(POSTS)} recipe schemas, "
-        f"{len(locations)} sitemap URLs, HTTP-only audit targets and static AdSense markup."
+        f"{len(locations)} sitemap URLs, editorial rules, HTTP-only audit targets and static AdSense markup."
     )
 
 
