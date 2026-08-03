@@ -340,6 +340,14 @@ def clean_text(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def truncate_text(value: str, limit: int) -> str:
+    value = clean_text(value)
+    if len(value) <= limit:
+        return value
+    shortened = value[: limit + 1].rsplit(" ", 1)[0].rstrip(".,;:")
+    return (shortened or value[:limit].rstrip(".,;:")) + "…"
+
+
 def clean_content(value: str) -> str:
     parser = ContentSanitizer()
     parser.feed(value or "")
@@ -359,6 +367,48 @@ def apply_post_overrides(post: dict) -> dict:
         content = content.replace(old, new)
     updated["content"] = content + override.get("append", "")
     return updated
+
+
+def dish_name(post: dict) -> str:
+    """Return a plain dish name without inherited promotional wording."""
+
+    override = POST_OVERRIDES.get(post["slug"], {})
+    if override.get("title"):
+        title = clean_text(override["title"])
+        return re.split(r"\s+Recipe(?::|$)", title, maxsplit=1, flags=re.I)[0].strip()
+
+    full = clean_text(post["title"]).strip('"“”')
+    if post["language"].startswith("ko"):
+        dish = re.split(r"\s*[:–—]\s*", full, maxsplit=1)[0]
+        dish = re.sub(r"^(?:완벽한|맛있는|최고의|정통)\s+", "", dish)
+        dish = re.sub(r"^한국식\s+", "", dish)
+        dish = re.sub(r"\s*만들기$", "", dish)
+        return dish.strip() or "한식"
+
+    if ":" in full:
+        dish = full.split(":", 1)[0]
+    else:
+        dish = unquote(post["slug"]).replace("-kr", "").replace("-", " ").title()
+    dish = re.sub(r"^(?:The\s+)?(?:Perfect|Ultimate|Best)\s+(?:Korean\s+)?", "", dish, flags=re.I)
+    return dish.strip('"“” ') or "Korean Food"
+
+
+def public_title(post: dict) -> str:
+    override = POST_OVERRIDES.get(post["slug"], {})
+    if override.get("title"):
+        return clean_text(override["title"])
+    dish = dish_name(post)
+    return f"{dish} 레시피" if post["language"].startswith("ko") else f"{dish} Recipe"
+
+
+def public_description(post: dict) -> str:
+    override = POST_OVERRIDES.get(post["slug"], {})
+    if override.get("excerpt"):
+        return clean_text(override["excerpt"])
+    dish = dish_name(post)
+    if post["language"].startswith("ko"):
+        return f"{dish}의 재료와 조리 순서, 간을 맞추는 방법과 함께 먹기 좋은 메뉴를 확인하세요."
+    return f"Learn the ingredients, cooking order, seasoning notes, and serving ideas for {dish}."
 
 
 def unique_text(items: list[str], limit: int) -> list[str]:
@@ -424,8 +474,7 @@ def recipe_category(post: dict) -> str:
 
 
 def recipe_keywords(post: dict) -> list[str]:
-    title = clean_text(post["title"])
-    dish = title.split(":", 1)[0].strip("\"“”")
+    dish = dish_name(post)
     content = clean_text(post.get("content", ""))
     hashtags = re.findall(r"#([A-Za-z가-힣][\w가-힣-]+)", content)
     defaults = ["한식", "한식 레시피"] if post["language"].startswith("ko") else ["Korean food", "Korean recipe"]
@@ -456,7 +505,7 @@ def site_header(lang: str, alternate_url: str = "") -> str:
         "menu": "메뉴" if ko else "Menu",
         "language": "EN" if ko else "한국어",
     }
-    announcement = "매주 새로운 레시피를 만나보세요" if ko else "New recipes every week"
+    announcement = "차분하게 정리한 한식 레시피와 조리 가이드" if ko else "Practical Korean recipes and cooking guides"
     return f'''<div class="announcement">Korean food, remembered and shared <span>·</span> {announcement}</div>
     <header class="site-header">
       <a class="wordmark" href="{prefix}/" aria-label="KFOOD Journal home">KFOOD <em>Journal</em></a>
@@ -498,11 +547,11 @@ def recipe_links(post: dict, posts: list[dict]) -> tuple[str, str]:
     next_label = "다음 레시피" if lang == "ko" else "Next recipe"
     related_label = "함께 볼 레시피" if lang == "ko" else "Related recipes"
     pager = f'''<nav class="article-pager" aria-label="Recipe pagination">
-      <a rel="prev" href="{html.escape(urlparse(previous["url"]).path, quote=True)}"><small>← {previous_label}</small><strong>{html.escape(clean_text(previous["title"]))}</strong></a>
-      <a rel="next" href="{html.escape(urlparse(following["url"]).path, quote=True)}"><small>{next_label} →</small><strong>{html.escape(clean_text(following["title"]))}</strong></a>
+      <a rel="prev" href="{html.escape(urlparse(previous["url"]).path, quote=True)}"><small>← {previous_label}</small><strong>{html.escape(public_title(previous))}</strong></a>
+      <a rel="next" href="{html.escape(urlparse(following["url"]).path, quote=True)}"><small>{next_label} →</small><strong>{html.escape(public_title(following))}</strong></a>
     </nav>'''
     cards = "".join(
-        f'<a href="{html.escape(urlparse(item["url"]).path, quote=True)}"><span>{index:02d}</span><strong>{html.escape(clean_text(item["title"]))}</strong></a>'
+        f'<a href="{html.escape(urlparse(item["url"]).path, quote=True)}"><span>{index:02d}</span><strong>{html.escape(public_title(item))}</strong></a>'
         for index, item in enumerate(related, 1)
     )
     related_html = f'<section class="related-recipes"><p class="article-kicker">{related_label}</p><div>{cards}</div></section>'
@@ -513,13 +562,7 @@ def seo_title(post: dict) -> str:
     override = POST_OVERRIDES.get(post["slug"], {})
     if override.get("seo_title"):
         return override["seo_title"]
-    full = clean_text(post["title"]).strip("\"“”")
-    dish = full.split(":", 1)[0].strip("\"“”")
-    if post["language"].startswith("ko"):
-        return f"{dish} 레시피 | KFOOD Journal"
-    if ":" not in full:
-        dish = unquote(post["slug"]).replace("-", " ").title()
-    return f"{dish} Korean Recipe | KFOOD Journal"
+    return f"{public_title(post)} | KFOOD Journal"
 
 
 def canonical_url(post: dict, posts_by_slug: dict[str, dict]) -> str:
@@ -555,8 +598,8 @@ def recipe_schema(post: dict, canonical: str) -> str:
         "@type": "Recipe",
         "@id": canonical + "#recipe",
         "mainEntityOfPage": canonical,
-        "name": clean_text(post["title"]),
-        "description": clean_text(post.get("excerpt", ""))[:300],
+        "name": public_title(post),
+        "description": truncate_text(public_description(post), 300),
         "image": [image] if image else [],
         "author": {"@type": "Organization", "name": "KFOOD Journal", "url": SITE + "/about/"},
         "datePublished": post.get("date"),
@@ -589,8 +632,8 @@ def recipe_schema(post: dict, canonical: str) -> str:
 
 def render(post: dict, posts_by_slug: dict[str, dict]) -> str:
     lang = "ko" if post["language"].startswith("ko") else "en"
-    title = clean_text(post["title"])
-    description = clean_text(post.get("excerpt", ""))[:160]
+    title = public_title(post)
+    description = truncate_text(public_description(post), 160)
     canonical = canonical_url(post, posts_by_slug)
     alternates, alternate_url = alternate_links(post, posts_by_slug)
     image = post.get("image", "")
@@ -652,7 +695,7 @@ def render_beginner_guide() -> str:
     title = "Korean Cooking for Beginners: A 5-Dish Starter Plan"
     description = (
         "Learn Korean cooking through five approachable dishes, a compact pantry, "
-        "a practical cooking order, and direct links to tested step-by-step recipes."
+        "a practical cooking order, and direct links to detailed step-by-step recipes."
     )
     schema = json.dumps(
         {
@@ -955,8 +998,8 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
     rows = []
     items = []
     for index, post in enumerate(selected, 1):
-        post_title = clean_text(post["title"])
-        excerpt = clean_text(post.get("excerpt", ""))[:150]
+        post_title = public_title(post)
+        excerpt = truncate_text(public_description(post), 150)
         path = urlparse(post["url"]).path
         rows.append(f'<a class="recipe-row" href="{html.escape(path, quote=True)}"><span class="number">{index:02d}</span><div><h2>{html.escape(post_title)}</h2><p>{html.escape(excerpt)}</p></div><time>{html.escape(post.get("date", ""))}</time><b>↗</b></a>')
         if index == 8:
@@ -974,10 +1017,13 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
   <link rel="canonical" href="{html.escape(canonical, quote=True)}">
   <link rel="alternate" hreflang="en" href="{SITE}/recipes/">
   <link rel="alternate" hreflang="ko" href="{SITE}/ko/recipes/">
+  <link rel="alternate" hreflang="x-default" href="{SITE}/recipes/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{html.escape(title, quote=True)}">
   <meta property="og:description" content="{html.escape(description, quote=True)}">
   <meta property="og:url" content="{html.escape(canonical, quote=True)}">
+  <meta property="og:image" content="{SITE}{BEGINNER_GUIDE_IMAGE}">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{schema}</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/scoredream/SCoreDream.css">
   <link rel="stylesheet" href="/styles.css">
@@ -987,7 +1033,7 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
 <body class="page-shell" data-alternate-url="{'/recipes/' if ko else '/ko/recipes/'}">
   <div data-site-header>{site_header(lang, "/recipes/" if ko else "/ko/recipes/")}</div>
   <main>
-    <section class="page-hero"><div><p class="eyebrow">{kicker}</p><h1>{heading}</h1></div><div class="page-hero-copy"><strong><span data-recipe-count>{len(selected)}</span> {'개의 레시피 · 집에서 쉽게' if ko else 'RECIPES · TESTED FOR HOME COOKS'}</strong>{summary}</div></section>
+    <section class="page-hero"><div><p class="eyebrow">{kicker}</p><h1>{heading}</h1></div><div class="page-hero-copy"><strong><span data-recipe-count>{len(selected)}</span> {'개의 레시피 · 집에서 쉽게' if ko else 'RECIPES · CLEAR STEPS FOR HOME COOKS'}</strong>{summary}</div></section>
     <section class="content-section"><div class="filter-bar"><label class="sr-only" for="recipe-search">{search_label}</label><input id="recipe-search" data-recipe-search placeholder="{placeholder}"></div><div class="recipe-list" data-recipe-list>{''.join(rows)}</div></section>
   </main>
   <div data-site-footer>{site_footer(lang)}</div>
@@ -1039,6 +1085,74 @@ def hydrate_static_pages() -> None:
         relative = path.relative_to(ROOT).as_posix()
         value = path.read_text(encoding="utf-8")
         lang = "ko" if relative.startswith("ko/") or 'lang="ko"' in value[:200] else "en"
+        value = value.replace("New recipes every week", "Practical Korean recipes and cooking guides")
+        value = value.replace("매주 새로운 레시피를 만나보세요", "차분하게 정리한 한식 레시피와 조리 가이드")
+        value = value.replace("delivered twice a month", "sent when a new edition is ready")
+        value = value.replace("한 달에 두 번 전해드려요", "새로운 편집본이 준비되면 전해드려요")
+        if relative in {"index.html", "ko/index.html"}:
+            home_images = {
+                '<span class="image image-gamjatang"></span>': (
+                    '<img class="image" src="/assets/cards/gamjatang-card.jpg" width="1200" height="900" '
+                    f'alt="{"감자와 채소를 넣은 감자탕" if lang == "ko" else "Gamjatang pork-bone stew with potatoes and greens"}" '
+                    'loading="lazy" decoding="async">'
+                ),
+                '<span class="image image-bibim"></span>': (
+                    '<img class="image" src="/assets/cards/bibim-naengmyeon-card.jpg" width="1200" height="900" '
+                    f'alt="{"매콤한 양념과 달걀, 채소를 올린 비빔냉면" if lang == "ko" else "Bibim naengmyeon with spicy sauce, egg, and vegetables"}" '
+                    'loading="lazy" decoding="async">'
+                ),
+                '<span class="image image-miyeok"></span>': (
+                    '<img class="image" src="/assets/cards/miyeokguk-card.jpg" width="1200" height="900" '
+                    f'alt="{"도자기 그릇에 담은 미역국" if lang == "ko" else "Korean miyeokguk seaweed soup in a ceramic bowl"}" '
+                    'loading="lazy" decoding="async">'
+                ),
+            }
+            for old, new in home_images.items():
+                value = value.replace(old, new)
+        if relative == "ko/index.html" and 'property="og:image"' not in value:
+            social_meta = (
+                '<meta property="og:type" content="website">'
+                '<meta property="og:title" content="KFOOD Journal — 기억하고 나누는 한국의 맛">'
+                '<meta property="og:description" content="집에서 따라 하기 쉬운 한식 레시피와 조리 가이드.">'
+                '<meta property="og:url" content="https://kfood.bumkok.com/ko/">'
+                f'<meta property="og:image" content="{SITE}{BEGINNER_GUIDE_IMAGE}">'
+                '<meta name="twitter:card" content="summary_large_image">'
+            )
+            value = value.replace("</title>", f"</title>{social_meta}", 1)
+        if relative in {"about/index.html", "ko/about/index.html"} and 'id="editorial-method"' not in value:
+            if lang == "ko":
+                editorial_method = '''<section id="editorial-method" class="content-section"><div class="prose-grid"><aside>누가, 어떻게, 왜 쓰는지 밝힙니다.</aside><article><h2>편집 원칙과 검증 범위</h2><p>KFOOD Journal은 기존 레시피 아카이브를 바탕으로 조리 순서, 음식명, 내부 링크와 구조화 데이터를 정리합니다. 새로 확인한 사실은 출처와 확인 범위를 구분하며, 작성자가 제공하지 않은 직접 조리·구매·체험을 만들지 않습니다.</p><p>자동 검사는 제목, canonical, hreflang, 레시피 구조화 데이터, 이미지, 광고 코드와 내부 링크의 기술 오류를 찾습니다. 맛, 분량, 조리 시간처럼 실제 주방 확인이 필요한 항목은 작성자 메모나 확인 기록이 있을 때만 검증됐다고 표시합니다.</p><p>수정이 필요하거나 근거를 제안하려면 <a href="/ko/contact/">문의 페이지</a>로 알려주세요.</p></article></div></section>'''
+            else:
+                editorial_method = '''<section id="editorial-method" class="content-section"><div class="prose-grid"><aside>We explain who publishes the work, how it is edited, and why it exists.</aside><article><h2>Editorial method and verification limits</h2><p>KFOOD Journal maintains an existing recipe archive and improves cooking order, dish names, internal links, and structured data. New factual corrections are separated from inherited copy, and we do not invent first-hand cooking, purchasing, or tasting experience.</p><p>Automated checks cover titles, canonicals, hreflang, recipe structured data, images, ad code, and internal links. Taste, yield, and timing are described as verified only when the owner has supplied a cooking note or another clear record.</p><p>To suggest a correction or source, use the <a href="/contact/">contact page</a>.</p></article></div></section>'''
+            value = value.replace("</main>", editorial_method + "</main>", 1)
+        if relative == "stories/index.html":
+            story_replacements = {
+                'href="#ingredients"': 'href="/korean-cooking-for-beginners/"',
+                'href="#people"': 'href="/miyeokguk/"',
+                'href="#places"': 'href="/dolsot-bibimbap/"',
+                "The pantry that builds Korean flavor": "A five-dish Korean cooking starter plan",
+                "Jang, sesame, seaweed, dried anchovies, and the essentials behind everyday cooking.": "Build a small pantry and learn five techniques that carry across everyday Korean cooking.",
+                "Remembering halmeoni's cooking": "Why miyeokguk belongs on the birthday table",
+                "Family recipes, inherited techniques, and the tastes that travel across generations.": "Read the dish background, ingredients, and cooking sequence for Korean seaweed soup.",
+                "Seoul, one neighborhood at a time": "How a stone bowl changes bibimbap",
+                "Markets, old-school restaurants, and local dishes worth knowing.": "Learn how heat, moisture, and timing create the crisp rice layer called nurungji.",
+            }
+            for old, new in story_replacements.items():
+                value = value.replace(old, new)
+        if relative == "ko/stories/index.html":
+            story_replacements = {
+                'href="#ingredients"': 'href="/ko/korean-cooking-for-beginners/"',
+                'href="#people"': 'href="/miyeokguk-kr/"',
+                'href="#places"': 'href="/dolsot-bibimbap-kr/"',
+                "한국의 맛을 만드는 식재료": "다섯 가지 메뉴로 시작하는 한식 입문",
+                "장, 참기름, 해조류, 멸치 등 매일의 한식에 깊이를 더하는 기본 재료.": "작은 기본 재료 목록과 다섯 가지 조리법으로 한식의 순서를 익힙니다.",
+                "할머니의 손맛을 기억하는 법": "생일상에 미역국을 올리는 이유",
+                "세대를 지나 이어지는 가족의 레시피와 부엌의 지혜.": "미역국의 배경과 재료, 조리 순서를 한 번에 확인합니다.",
+                "서울의 오래된 맛을 찾아서": "돌솥이 비빔밥을 바꾸는 방법",
+                "시장과 노포, 동네마다 다르게 살아 있는 지역의 음식.": "불과 수분, 기다리는 시간이 누룽지를 만드는 과정을 살펴봅니다.",
+            }
+            for old, new in story_replacements.items():
+                value = value.replace(old, new)
         route = "/" + relative.removesuffix("index.html")
         if lang == "ko" and route.startswith("/ko/"):
             alternate = route.removeprefix("/ko") or "/"

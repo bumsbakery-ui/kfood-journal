@@ -189,10 +189,42 @@ def main() -> None:
         fail("homepage is missing its search-focused title")
     if home.count('href="/korean-cooking-for-beginners/"') < 2:
         fail("homepage needs prominent links to the beginner cooking guide")
+    if '<span class="image image-' in home:
+        fail("homepage recipe cards must use crawlable img elements, not CSS-only images")
+    for image in ("gamjatang-card.jpg", "bibim-naengmyeon-card.jpg", "miyeokguk-card.jpg"):
+        if f'<img class="image" src="/assets/cards/{image}"' not in home:
+            fail(f"homepage is missing its crawlable {image} card image")
+    for unsupported in ("tested techniques", "New recipes every week", "delivered twice a month"):
+        if unsupported in home:
+            fail(f"homepage contains an unsupported promise: {unsupported}")
 
     korean_home = (ROOT / "ko/index.html").read_text(encoding="utf-8")
     if korean_home.count('href="/ko/korean-cooking-for-beginners/"') < 2:
         fail("Korean homepage needs prominent links to the Korean beginner guide")
+    if '<span class="image image-' in korean_home:
+        fail("Korean homepage recipe cards must use crawlable img elements")
+    if 'property="og:image"' not in korean_home:
+        fail("Korean homepage is missing a social result image")
+    for unsupported in ("매주 새로운 레시피를 만나보세요", "한 달에 두 번 전해드려요"):
+        if unsupported in korean_home:
+            fail(f"Korean homepage contains an unsupported promise: {unsupported}")
+
+    for relative in ("recipes/index.html", "ko/recipes/index.html"):
+        archive = (ROOT / relative).read_text(encoding="utf-8")
+        for required in ('hreflang="x-default"', 'property="og:image"', 'name="twitter:card"'):
+            if required not in archive:
+                fail(f"{relative} is missing {required}")
+        if "TESTED FOR HOME COOKS" in archive:
+            fail(f"{relative} contains an unsupported testing claim")
+
+    for relative in ("about/index.html", "ko/about/index.html"):
+        if 'id="editorial-method"' not in (ROOT / relative).read_text(encoding="utf-8"):
+            fail(f"{relative} is missing editorial method disclosure")
+
+    for relative in ("stories/index.html", "ko/stories/index.html"):
+        stories = (ROOT / relative).read_text(encoding="utf-8")
+        if any(fragment in stories for fragment in ('href="#ingredients"', 'href="#people"', 'href="#places"')):
+            fail(f"{relative} still contains empty fragment story links")
 
     expected_titles = {
         "dolsot-bibimbap": "Dolsot Bibimbap Recipe: Crispy Rice | KFOOD Journal",

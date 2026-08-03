@@ -13,7 +13,7 @@
     : { recipes:'Recipes', stories:'Stories', guide:'Food Guide', about:'About', contact:'Contact', privacy:'Privacy', find:'Find a recipe', menu:'Menu', lang:'한국어' };
   const header = document.querySelector('[data-site-header]');
   if (header) header.innerHTML = `
-    <div class="announcement">Korean food, remembered and shared <span>·</span> ${ko ? '매주 새로운 레시피를 만나보세요' : 'New recipes every week'}</div>
+    <div class="announcement">Korean food, remembered and shared <span>·</span> ${ko ? '차분하게 정리한 한식 레시피와 조리 가이드' : 'Practical Korean recipes and cooking guides'}</div>
     <header class="site-header">
       <a class="wordmark" href="${prefix}/" aria-label="KFOOD Journal home">KFOOD <em>Journal</em></a>
       <button class="menu-button" aria-expanded="false" aria-controls="primary-nav">${labels.menu}</button>

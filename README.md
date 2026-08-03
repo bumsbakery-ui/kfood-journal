@@ -5,4 +5,6 @@ Korean food journal website
 
 Run `python3 scripts/verify_site.py` before deployment. Recurring availability checks must read `audit-manifest.json` and use HTTP-only requests such as `curl`; they should not open live pages in a JavaScript browser because doing so can pollute AdSense and Analytics traffic.
 
+Run `python3 scripts/content_quality_audit.py` before choosing the next page to edit. It ranks inherited first-person and promotional copy against the current Search Console opportunity baseline. Follow `KFOOD_30_DAY_GROWTH_PLAN.md`; do not use the report as a reason to mass-rewrite or mass-publish pages.
+
 Analytics separates a plain page load from an `engaged_reader`. The latter is sent only after a visible visitor interacts, stays for at least 20 seconds, and reaches 50% scroll depth. Language switches and outbound clicks are also tracked without collecting link text or personal data.
