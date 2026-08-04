@@ -79,13 +79,15 @@ def main() -> None:
     args = parser.parse_args()
 
     pages = sorted((inspect(post) for post in POSTS), key=lambda item: item["priority_score"], reverse=True)
+    review_queue = [item for item in pages if item["review_required"]]
     summary = {
         "recipe_pages": len(pages),
-        "review_required_pages": sum(item["review_required"] for item in pages),
+        "review_required_pages": len(review_queue),
         "first_person_experience_pages": sum(item["first_person_experience_hits"] > 0 for item in pages),
         "hype_pages": sum(item["hype_hits"] > 0 for item in pages),
         "missing_og_image_pages": sum(not item["has_og_image"] for item in pages),
-        "priority_pages": pages[: args.limit],
+        "priority_pages": review_queue[: args.limit],
+        "reviewed_pages": [item for item in pages if not item["review_required"]],
     }
     if args.json:
         print(json.dumps(summary, ensure_ascii=False, indent=2))

@@ -6,7 +6,6 @@ from __future__ import annotations
 import html
 import json
 import re
-from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -15,7 +14,7 @@ from urllib.parse import unquote, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "assets/data/posts-full.json"
 SITE = "https://kfood.bumkok.com"
-BUILD_DATE = date.today().isoformat()
+STATIC_PAGE_LASTMOD = "2026-08-03"
 ADSENSE_PUBLISHER_ID = "ca-pub-5699330365644775"
 ADSENSE_SLOT_ID = "1340029023"
 ADSENSE_LOADER = (
@@ -76,18 +75,71 @@ POST_OVERRIDES = {
     "yukgaejang": {
         "title": "Yukgaejang Recipe: Spicy Korean Beef Soup",
         "seo_title": "Yukgaejang Recipe: Spicy Korean Beef Soup | KFOOD Journal",
+        "lastmod": "2026-08-04",
         "excerpt": (
             "Cook yukgaejang, a spicy Korean beef soup with shredded brisket, green onion, "
             "bean sprouts, and gochugaru, with substitutions and troubleshooting tips."
         ),
         "replacements": [
             (
+                "<p class=\"wp-block-paragraph\">Hello everyone! This is Kfood Journal. Today, we&#8217;re introducing Yukgaejang, one of Korea&#8217;s most celebrated revitalizing soups. This fiery red broth filled with shredded beef and vegetables is the quintessential energy-boosting comfort food that Koreans turn to when they need strength and warmth.</p>",
+                "<p class=\"wp-block-paragraph\">Yukgaejang is a spicy Korean beef soup made with shredded beef, green onion, vegetables, garlic, and red pepper. The useful decisions for a home cook are choosing a cut that shreds well, preparing the dried vegetables, and adding the red pepper without scorching it.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">The History of Yukgaejang: From Royal Courts to Everyday Energy</h2>",
+                "<h2 class=\"wp-block-heading\">What Defines Yukgaejang</h2>",
+            ),
+            (
                 "<p class=\"wp-block-paragraph\">Yukgaejang evolved as a variation of Seolleongtang (ox bone soup) during the Joseon Dynasty, originally called &#8220;Yukgye&#8221; or &#8220;Yukgi.&#8221; It began as a nourishing dish enjoyed by the royal family and nobility but gradually became beloved by the general population. Traditional Yukgaejang was characterized by its rich beef broth simmered for hours, enhanced with spicy red pepper powder for an invigorating kick. Historically, various beef parts including offal (tripe, lungs, intestines) were used, but modern versions primarily use brisket or shank. Today, it&#8217;s a popular hangover remedy and a go-to dish when Koreans need physical and spiritual fortification.</p>",
-                "<p class=\"wp-block-paragraph\">Yukgaejang is a Korean spicy beef soup built from a clear beef broth, shredded meat, green onion, vegetables, garlic, and gochugaru. Recipes vary by household and region; brisket and shank are practical modern choices because they become tender enough to shred while flavoring the broth.</p>",
+                "<p class=\"wp-block-paragraph\">The <a href=\"https://www.hansik.or.kr/magazines/list/magazineDetail/31/2995?menuSn=429\">Korean Food Promotion Institute</a> describes yukgaejang as beef brisket and radish cooked until tender, then seasoned with green onion, taro stems, gosari, and gochugaru. Historical recipes use different beef cuts and seasonings, so this page presents one practical home version rather than a single definitive formula.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">5 Golden Secrets for Perfect Yukgaejang</h2>",
+                "<h2 class=\"wp-block-heading\">Five Technique Checks Before You Start</h2>",
+            ),
+            (
+                "<li><strong>Simmer Beef Thoroughly</strong>: Cook the beef until it&#8217;s tender enough to easily shred, as this creates a deep, flavorful broth.</li>",
+                "<li><strong>Check the Beef Before Shredding</strong>: Continue simmering until the beef separates with light pressure. A fixed time is less useful than the texture of the cut in your pot.</li>",
+            ),
+            (
+                "<li><strong>Shred Beef Along the Grain</strong>: Shredding the beef along its grain creates the characteristic stringy texture that&#8217;s essential to authentic Yukgaejang.</li>",
+                "<li><strong>Shred Beef Along the Grain</strong>: Pull the tender beef into long strands so it remains distinct among the vegetables.</li>",
+            ),
+            (
+                "<li><strong>Incorporate Perilla Seed Powder</strong>: Adding a touch of perilla seed powder enhances the soup&#8217;s nuttiness and softens the spiciness.</li>",
+                "<li><strong>Treat Perilla Seed Powder as Optional</strong>: Add a small amount for a nuttier, fuller broth, or leave it out when you want a cleaner beef flavor.</li>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Yukgaejang is best enjoyed piping hot, served directly from the pot to the table. It&#8217;s traditionally eaten with a bowl of rice, and many Koreans mix their rice directly into the soup for a complete one-bowl meal known as &#8220;yukgaejang bap.&#8221; Crisp kimchi such as kkakdugi (cubed radish kimchi) or fresh cucumber kimchi provides a refreshing contrast to the soup&#8217;s spiciness. For those who enjoy extra heat, additional red chili powder or fresh chili peppers can be served on the side. This soup is particularly satisfying on cold winter days, rainy days, or after a night of drinking when hangover relief is needed.</p>",
+                "<p class=\"wp-block-paragraph\">Serve yukgaejang with plain rice and a crisp side dish such as kkakdugi. Put extra gochugaru or sliced chili on the table instead of increasing the heat for the whole pot. For leftovers, divide the soup into shallow covered containers and refrigerate promptly.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">A Bowl of Vitality, Yukgaejang&#8217;s Comfort</h2>",
+                "<h2 class=\"wp-block-heading\">Serving and Storage</h2>",
             ),
             (
                 "<p class=\"wp-block-paragraph\">A bowl of Yukgaejang is much more than just a meal—it&#8217;s a warm embrace offering strength when you&#8217;re feeling weak, a spicy revival for tired bodies, and a source of energy rooted in centuries of Korean culinary wisdom. The moment the fiery broth touches your lips and travels down your throat, a comforting warmth spreads throughout your body, instilling confidence to overcome any challenge. Why not share this revitalizing experience with loved ones after a long, tiring day or during the depths of winter?</p>",
-                "<p class=\"wp-block-paragraph\">Yukgaejang is especially satisfying when served hot with plain rice and a crisp side dish such as kkakdugi. Let leftovers cool promptly, refrigerate them in a covered container, and reheat only the portion you plan to eat.</p>",
+                "<p class=\"wp-block-paragraph\">The USDA advises refrigerating cooked leftovers promptly in shallow containers, using most leftovers within 3 to 4 days, and reheating them to 165°F (74°C). Reheat only the portion you plan to serve so the vegetables are not repeatedly softened.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">#KoreanFood #Yukgaejang #SpicySoup #BeefSoup #RevitalizingFood #HangoverCure #KfoodJournal</p>",
+                "<h2 class=\"wp-block-heading\">Sources and Verification Limit</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><em>This article is part of the Korean Revitalizing Foods Series by Kfood Journal.</em></p>",
+                "<p class=\"wp-block-paragraph\">The dish definition and historical comparison were checked against the <a href=\"https://www.hansik.or.kr/magazines/list/magazineDetail/31/2995?menuSn=429\">Korean Food Promotion Institute dish guide</a> and its <a href=\"https://www.hansik.or.kr/magazines/list/magazineDetail/32/3031\">historical cookbook feature</a>. Storage guidance follows the <a href=\"https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe\">USDA leftovers guidance</a>. This inherited recipe has not been labeled kitchen-tested because no owner cooking log was supplied for this review.</p>",
+            ),
+            (
+                "src=\"/assets/post-images/2025/05/Yukgaejang-3.png\" alt=\"Yukgaejang 1\"",
+                "src=\"/assets/post-images/2025/05/Yukgaejang-3.png\" alt=\"Hot soup served in a black stone bowl\"",
+            ),
+            (
+                "src=\"/assets/post-images/2025/05/Yukgaejang-2.png\" alt=\"Yukgaejang 2\"",
+                "src=\"/assets/post-images/2025/05/Yukgaejang-2.png\" alt=\"Red yukgaejang topped with sliced green onion\"",
+            ),
+            (
+                "src=\"/assets/post-images/2025/05/Yukgaejang-1.png\" alt=\"Yukgaejang 1\"",
+                "src=\"/assets/post-images/2025/05/Yukgaejang-1.png\" alt=\"Yukgaejang served with rice and kkakdugi\"",
             ),
         ],
         "append": """
@@ -1047,11 +1099,13 @@ def render_archive(posts: list[dict], lang: str, canonical: str) -> str:
 
 def write_sitemap(posts: list[dict], posts_by_slug: dict[str, dict]) -> None:
     static_pages = ["/", "/recipes/", "/stories/", "/food-guide/", BEGINNER_GUIDE_PATH, "/about/", "/contact/", "/privacy/", "/ko/", "/ko/recipes/", "/ko/stories/", "/ko/food-guide/", BEGINNER_GUIDE_KO_PATH, "/ko/about/", "/ko/contact/", "/ko/privacy/"]
-    urls = [(SITE + path, BUILD_DATE) for path in static_pages]
+    urls = [(SITE + path, STATIC_PAGE_LASTMOD) for path in static_pages]
     for post in posts:
         if post["slug"] in CANONICAL_ALIASES:
             continue
-        urls.append((canonical_url(post, posts_by_slug), post.get("date") or BUILD_DATE))
+        override = POST_OVERRIDES.get(post["slug"], {})
+        lastmod = override.get("lastmod") or post.get("date") or STATIC_PAGE_LASTMOD
+        urls.append((canonical_url(post, posts_by_slug), lastmod))
     body = "\n".join(f"  <url><loc>{html.escape(url)}</loc><lastmod>{lastmod}</lastmod></url>" for url, lastmod in urls)
     (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding="utf-8")
 
