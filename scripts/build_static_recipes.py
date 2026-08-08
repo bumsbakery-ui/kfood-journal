@@ -168,10 +168,225 @@ POST_OVERRIDES = {
     "galbitang": {
         "title": "Galbitang Recipe: Clear Korean Short Rib Soup",
         "seo_title": "Galbitang Recipe: Korean Short Rib Soup | KFOOD Journal",
+        "lastmod": "2026-08-07",
         "excerpt": (
             "Make galbitang with tender beef short ribs and a clear Korean broth, "
             "with blanching, low-simmer, seasoning, storage, and serving tips."
         ),
+        "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Hey there, soup lovers and rib enthusiasts!</strong> 🍖🍲 Are you tired of choosing between hearty meat dishes and light, nourishing soups? Ready to discover the Korean secret that combines fall-off-the-bone tender ribs with crystal-clear, soul-warming broth? Well, get ready to have your mind completely blown because I&#8217;m about to introduce you to <strong>Galbitang</strong> (갈비탕) &#8211; Korea&#8217;s legendary short rib soup that&#8217;s basically luxury comfort food in a bowl!</p>",
+                "<p class=\"wp-block-paragraph\">Galbitang is a Korean short-rib soup built around tender beef and a clear broth. The useful choices are how to clean the ribs, how gently to simmer the broth, and when to stop cooking based on the meat rather than a fixed time.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Imagine this: meaty short ribs so tender they practically melt off the bone, swimming in a pristine, golden broth that&#8217;s been simmered to perfection, with glass noodles dancing around like little flavor ninjas. Add some fresh scallions and a sprinkle of garlic, and you&#8217;ve got yourself a bowl that screams &#8220;I love you&#8221; in every language! This isn&#8217;t just soup &#8211; it&#8217;s edible poetry! 🎭✨</p>",
+                "<p class=\"wp-block-paragraph\">For a clearer broth, rinse the blanched ribs well, begin again with fresh water, and keep the pot at a quiet simmer. Noodles, radish, green onion, and garlic are optional serving components rather than requirements.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Why Galbitang Will Ruin You for All Other Soups Forever</h2>",
+                "<h2 class=\"wp-block-heading\">What to Look For in Galbitang</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Okay, real talk time! My first encounter with galbitang was at a fancy Korean BBQ place where I thought I was just ordering &#8220;some kind of rib soup&#8221; as a side dish. Boy, was I wrong! When that bowl arrived, looking like liquid gold with these gorgeous ribs peeking out, I thought, &#8220;Well, this looks fancy, but how good can soup really be?&#8221;</p>",
+                "<p class=\"wp-block-paragraph\">The broth should taste beef-forward without being heavily seasoned. If it is cloudy, the first check is the blanching and rinsing step; if it tastes thin, reduce a portion of the strained broth before adding more salt.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">That first spoonful changed everything. <strong>GAME. OVER.</strong> The broth was so clean yet so rich, like someone had captured the essence of comfort and turned it into liquid form. And when I tried the rib meat? It literally fell apart with my chopsticks &#8211; so tender, so flavorful, so perfectly balanced with that incredible broth. I sat there in stunned silence, realizing I&#8217;d been living my entire life without knowing this level of soup perfection existed!</p>",
+                "<p class=\"wp-block-paragraph\">Use the meat as the final doneness check: a fork should enter with little resistance and the meat should separate from the bone without forcing it. Rib thickness, the cut, and the simmer all affect the time needed.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">The genius of galbitang is how it manages to be both elegant and comforting at the same time. It&#8217;s fancy enough for special occasions but cozy enough to cure whatever&#8217;s bothering your soul. Plus, there&#8217;s something deeply satisfying about eating meat off the bone while sipping heavenly broth &#8211; it&#8217;s primal comfort food at its finest! 🦴💫</p>",
+                "<p class=\"wp-block-paragraph\">Serve the ribs in the broth or remove the meat first for easier portioning. Each diner can add salt, pepper, garlic, and green onion at the table.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Everything You Need for This Liquid Luxury</h2>",
+                "<h2 class=\"wp-block-heading\">Ingredients and Optional Additions</h2>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">The Rib Royalty (Stars of the Show)</h3>",
+                "<h3 class=\"wp-block-heading\">For the Broth</h3>",
+            ),
+            (
+                "<li>1 Asian pear, quartered (secret ingredient alert!)</li>",
+                "<li>1 Asian pear, quartered</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">The Supporting Cast</h3>",
+                "<h3 class=\"wp-block-heading\">For Serving</h3>",
+            ),
+            (
+                "<li>2 oz sweet potato starch noodles (dangmyeon) &#8211; optional but amazing</li>",
+                "<li>2 oz sweet potato starch noodles (dangmyeon), optional</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Shopping Adventure Guide 🛒</h3>",
+                "<h3 class=\"wp-block-heading\">Choosing the Ribs</h3>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Korean grocery stores are your treasure map here!</strong> Look for pre-cut galbi in the meat section &#8211; they&#8217;re usually already cut in the perfect flanken style with the bone showing those beautiful cross-sections. <strong>H-Mart, 99 Ranch, or any Asian market</strong> will have these ready to go!</p>",
+                "<p class=\"wp-block-paragraph\">Look for short ribs cut across the bones (flanken-style) if that is the presentation you want. Ask the butcher how the ribs were cut and choose pieces of similar thickness so they cook at a similar pace.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Can&#8217;t find Korean-style cuts?</strong> Ask your butcher to cut short ribs &#8220;flanken style&#8221; &#8211; they&#8217;ll know what you mean! <strong>No Asian pear?</strong> Regular pear or even a Granny Smith apple works as a substitute. The fruit adds natural sweetness and helps tenderize the meat!</p>",
+                "<p class=\"wp-block-paragraph\">If Korean-style ribs are unavailable, ask whether the butcher can cut short ribs across the bones. A regular pear or apple can stand in for Asian pear, though the flavor will differ.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Sweet potato noodles missing?</strong> Skip them entirely or use thin rice noodles. The soup is incredible with or without them!</p>",
+                "<p class=\"wp-block-paragraph\">Sweet potato noodles are optional. Omit them, or use a noodle that suits the serving size and cooking method.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Let&#8217;s Create Some Rib Soup Magic!</h2>",
+                "<h2 class=\"wp-block-heading\">Cooking Method</h2>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Step 1: Rib Prep Ritual (The Foundation of Greatness)</h3>",
+                "<h3 class=\"wp-block-heading\">Step 1: Soak, Blanch, and Rinse</h3>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">This step is crucial for that crystal-clear broth we&#8217;re after:</p>",
+                "<p class=\"wp-block-paragraph\">Use this preparation sequence to remove surface impurities before starting the broth:</p>",
+            ),
+            (
+                "<li>Bring to a vigorous boil and let it rage for 10-15 minutes</li>",
+                "<li>Bring the ribs to a boil, then drain and rinse them before beginning the fresh broth</li>",
+            ),
+            (
+                "<li><strong>Don&#8217;t panic about the foam and scum</strong> &#8211; this is totally normal!</li>",
+                "<li>Discard the water and rinse away foam and residue</li>",
+            ),
+            (
+                "<li>Drain everything and rinse the ribs under cold running water until squeaky clean</li>",
+                "<li>Rinse the ribs under running water and clean the pot before refilling it</li>",
+            ),
+            (
+                "<li><strong>This blanching step is your secret weapon</strong> for pristine broth!</li>",
+                "<li>Start the broth with fresh water after rinsing</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Step 2: The Great Simmer Symphony</h3>",
+                "<h3 class=\"wp-block-heading\">Step 2: Simmer Until the Meat Is Tender</h3>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Here&#8217;s where patience pays off big time:</p>",
+                "<p class=\"wp-block-paragraph\">Keep the broth at a low simmer and check the rib texture as it cooks:</p>",
+            ),
+            (
+                "<li><strong>The magic number:</strong> Simmer for 2-3 hours minimum, up to 4 hours for ultimate tenderness</li>",
+                "<li>Continue simmering until a fork enters the meat easily; the required time varies with the ribs and heat</li>",
+            ),
+            (
+                "<li><strong>Pro tip:</strong> The meat should be fork-tender and practically falling off the bone when ready!</li>",
+                "<li>Check a thick piece before deciding the ribs are done</li>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Pressure Cooker Shortcut:</strong> 45 minutes on high pressure, then natural release!</p>",
+                "<p class=\"wp-block-paragraph\">Pressure-cooker timing depends on the appliance and rib thickness. Use the manufacturer’s instructions and check the meat before serving rather than relying on an inherited fixed time.</p>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Step 3: The Broth Perfection Process</h3>",
+                "<h3 class=\"wp-block-heading\">Step 3: Strain and Season</h3>",
+            ),
+            (
+                "<li>Carefully remove all the ribs and set aside (don&#8217;t let them fall apart!)</li>",
+                "<li>Remove the ribs carefully and set them aside</li>",
+            ),
+            (
+                "<li>You should have a gorgeous, clear, golden broth &#8211; if it&#8217;s cloudy, strain again!</li>",
+                "<li>Strain again if you prefer a clearer broth</li>",
+            ),
+            (
+                "<li><strong>Taste test is crucial</strong> &#8211; the broth should be rich but not overpowering</li>",
+                "<li>Season gradually with salt and pepper, then adjust to your preference</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Step 4: Noodle and Garnish Prep</h3>",
+                "<h3 class=\"wp-block-heading\">Step 4: Prepare Noodles and Garnish</h3>",
+            ),
+            (
+                "<li>Prep your green onions and garlic</li>",
+                "<li>Slice the green onions and prepare the garlic</li>",
+            ),
+            (
+                "<li>Warm your serving bowls (this keeps everything hot longer!)</li>",
+                "<li>Warm serving bowls if you want to help the soup stay hot at the table</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Step 5: The Grand Assembly Masterpiece</h3>",
+                "<h3 class=\"wp-block-heading\">Step 5: Assemble Each Bowl</h3>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">The Art of Galbitang Appreciation (It&#8217;s a Skill!)</h2>",
+                "<h2 class=\"wp-block-heading\">Serving Choices</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Here&#8217;s how to maximize your galbitang experience:</p>",
+                "<p class=\"wp-block-paragraph\">Choose a serving style that makes the ribs and broth easy to portion:</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>The Meat Liberation:</strong> Use your chopsticks to gently separate the meat from the bone. Don&#8217;t be shy &#8211; Korean dining is interactive!</p>",
+                "<p class=\"wp-block-paragraph\"><strong>Ribs:</strong> Serve them on the bone, or separate the meat for easier eating.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Season Your Soul:</strong> Add minced garlic, salt, and pepper to taste. Everyone seasons their own bowl, so start conservative!</p>",
+                "<p class=\"wp-block-paragraph\"><strong>Seasoning:</strong> Put minced garlic, salt, and pepper on the table so each diner can adjust the bowl.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>The Noodle Dance:</strong> Twirl those sweet potato noodles around your chopsticks and slurp away. The texture contrast is divine!</p>",
+                "<p class=\"wp-block-paragraph\"><strong>Noodles:</strong> Add them only after they are soft enough to separate easily.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Rice Integration:</strong> Some people add rice directly to the soup, others eat it alongside. Both ways are perfectly correct!</p>",
+                "<p class=\"wp-block-paragraph\"><strong>Rice:</strong> Serve rice alongside, or add it to the soup if that is your preference.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Temperature Matters:</strong> This soup must be served blazing hot. We&#8217;re talking steam-rising, soul-warming hot!</p>",
+                "<p class=\"wp-block-paragraph\"><strong>Temperature:</strong> Serve the soup hot, but take care with bowls and broth that retain heat.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Why Your Body Will Thank You Forever</h2>",
+                "<h2 class=\"wp-block-heading\">Food-Safety Notes</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Galbitang isn&#8217;t just delicious &#8211; it&#8217;s basically health in a bowl:</p>",
+                "<p class=\"wp-block-paragraph\">This page does not make nutrition or health claims. Handle the cooked soup as a perishable food:</p>",
+            ),
+            (
+                "<li><strong>Protein powerhouse</strong> from high-quality beef short ribs</li>\n\n\n\n<li><strong>Collagen boost</strong> for healthy skin, joints, and bones</li>\n\n\n\n<li><strong>Iron rich</strong> &#8211; perfect for energy and immune support</li>\n\n\n\n<li><strong>Gentle on digestion</strong> despite being so satisfying</li>\n\n\n\n<li><strong>Hangover healing</strong> &#8211; Korean college students swear by this!</li>\n\n\n\n<li><strong>Comfort food therapy</strong> for stress, sadness, or just life in general</li>",
+                "<li>Refrigerate leftovers within 2 hours of cooking; use 1 hour when the surrounding temperature is above 90°F (32°C).</li>\n\n\n\n<li>Divide soup into shallow containers so it cools more quickly.</li>\n\n\n\n<li>Keep refrigerated leftovers at 40°F (4°C) or below and use them within 3 to 4 days.</li>\n\n\n\n<li>Freeze portions you will not use within that period.</li>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Creative Twists That&#8217;ll Elevate Your Game</h2>",
+                "<h2 class=\"wp-block-heading\">Optional Variations</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\"><strong>Ready to customize your galbitang?</strong> Try these variations:</p>",
+                "<p class=\"wp-block-paragraph\">These changes alter the result, so treat them as options rather than a single traditional formula:</p>",
+            ),
+            (
+                "<li><strong>Luxury Version:</strong> Use prime grade short ribs for ultimate richness</li>\n\n\n\n<li><strong>Veggie Power:</strong> Add daikon radish, napa cabbage, or mushrooms during the last 30 minutes</li>\n\n\n\n<li><strong>Spicy Kick:</strong> Serve with a side of kimchi or add a touch of gochugaru</li>\n\n\n\n<li><strong>Herbal Healing:</strong> Add a few pieces of Korean ginseng for extra wellness benefits</li>\n\n\n\n<li><strong>Modern Fusion:</strong> Garnish with microgreens or serve with artisanal kimchi</li>",
+                "<li><strong>Radish or mushrooms:</strong> Add them near the end so they do not overcook.</li>\n\n\n\n<li><strong>Spicy side:</strong> Serve kimchi or gochugaru separately rather than changing the whole pot.</li>\n\n\n\n<li><strong>Ginseng:</strong> Use it only if its flavor suits the broth; it is a flavor choice, not a health claim.</li>\n\n\n\n<li><strong>Garnish:</strong> Green onion and radish keep the presentation simple.</li>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">The Cultural Comfort Connection</h2>\n\n\n\n<p class=\"wp-block-paragraph\">Galbitang holds a special place in Korean culture as the ultimate special occasion soup. Traditionally served during celebrations, family gatherings, and important milestones, it represents abundance, care, and the best of Korean hospitality.</p>\n\n\n\n<p class=\"wp-block-paragraph\">The dish originated from Korean royal court cuisine, where it was considered a delicacy worthy of kings. What makes it beautiful is how it trickled down to become comfort food for everyone &#8211; proof that the best luxuries are the ones that nourish both body and spirit.</p>\n\n\n\n<p class=\"wp-block-paragraph\">In Korean families, making galbitang is often a labor of love passed down through generations. Mothers teach daughters the perfect balance of seasonings, the importance of patience during simmering, and the art of achieving that crystal-clear broth that defines mastery.</p>",
+                "<h2 class=\"wp-block-heading\">What This Version Does and Does Not Claim</h2>\n\n\n\n<p class=\"wp-block-paragraph\">Galbitang recipes vary by household, restaurant, rib cut, and seasoning preference. This page keeps one inherited home-style version and does not claim a single royal-court origin or definitive traditional formula.</p>\n\n\n\n<p class=\"wp-block-paragraph\">No author cooking log was supplied for this review. The recipe is therefore not labeled kitchen-tested, and exact timing, yield, and taste should be adjusted after checking the ribs and broth in your own kitchen.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Your Galbitang Mastery Challenge!</h2>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Are you ready to join the ranks of galbitang masters?</strong> I challenge you to make this soup from scratch and document your journey from raw ribs to liquid gold! Capture that beautiful blanching process, set up time-lapse videos of your simmering, and most importantly &#8211; record your first taste reaction!</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Level up challenge:</strong> Make it a special dinner party centerpiece! Serve galbitang as the main event with banchan (Korean side dishes), steamed rice, and maybe some Korean pears for dessert. Your guests will think you&#8217;ve transported them directly to Seoul!</p>\n\n\n\n<p class=\"wp-block-paragraph\">Here&#8217;s the beautiful truth about mastering galbitang &#8211; once you nail this recipe, you&#8217;ll have a secret weapon for every occasion. Sick friend? Galbitang. Cold winter day? Galbitang. Want to impress someone special? Galbitang. It&#8217;s the Swiss Army knife of comfort food!</p>\n\n\n\n<p class=\"wp-block-paragraph\"><strong>Have you tried authentic galbitang before? What&#8217;s your favorite Korean soup that makes you feel like you&#8217;re getting a warm hug? Share your Korean comfort food stories in the comments &#8211; let&#8217;s build a community of soup soul-mates!</strong></p>\n\n\n\n<p class=\"wp-block-paragraph\"><em>P.S. &#8211; If you take on this galbitang challenge, please tag me in your progress photos! I&#8217;m absolutely dying to see those beautiful clear broths and tender ribs. Your future comfort-food-craving self will worship you for learning this recipe!</em> 🍖🍲💙</p>",
+                "<h2 class=\"wp-block-heading\">Sources and Verification Limit</h2>\n\n\n\n<p class=\"wp-block-paragraph\">Storage guidance follows the <a href=\"https://ask.fsis.usda.gov/article/How-do-I-handle-leftovers-safely\">USDA leftovers guidance</a>: refrigerate cooked food promptly, use shallow containers for cooling, and use refrigerated leftovers within 3 to 4 days. This inherited recipe has not been labeled kitchen-tested because no owner cooking record was supplied for this review.</p>",
+            ),
+            (
+                "src=\"/assets/post-images/2025/06/galbitang-1.png\" alt=\"Galbitang 1\"",
+                "src=\"/assets/post-images/2025/06/galbitang-1.png\" alt=\"Galbitang short-rib soup in a bowl\"",
+            ),
+            (
+                "src=\"/assets/post-images/2025/06/galbitang-4.png\" alt=\"Galbitang 2\"",
+                "src=\"/assets/post-images/2025/06/galbitang-4.png\" alt=\"Galbitang broth with short ribs and garnish\"",
+            ),
+            (
+                "src=\"/assets/post-images/2025/06/galbitang-2.png\" alt=\"Galbitang 3\"",
+                "src=\"/assets/post-images/2025/06/galbitang-2.png\" alt=\"Bowl of galbitang served with beef ribs\"",
+            ),
+        ],
         "append": """
 <h2 class="wp-block-heading">Galbitang Troubleshooting</h2>
 <ul class="wp-block-list">
