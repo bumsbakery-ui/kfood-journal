@@ -36,11 +36,24 @@ POST_OVERRIDES = {
     "dolsot-bibimbap": {
         "title": "Dolsot Bibimbap Recipe: Crispy Rice in a Korean Stone Bowl",
         "seo_title": "Dolsot Bibimbap Recipe: Crispy Rice | KFOOD Journal",
+        "lastmod": "2026-08-13",
         "excerpt": (
             "Make dolsot bibimbap with seasoned vegetables, rice, egg, and gochujang, "
             "plus practical steps for a crisp nurungji crust and safe stone-bowl handling."
         ),
         "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\">Hey there, Kfood Journal fans! Today we&#8217;re diving into one of Korea&#8217;s most beloved culinary treasures – Dolsot Bibimbap. That sizzling rice dish that arrives at your table still crackling and popping in a scorching hot stone bowl. It&#8217;s not just a meal; it&#8217;s a performance, a tradition, and honestly, pure comfort in a bowl.</p>",
+                "<p class=\"wp-block-paragraph\">Dolsot bibimbap combines rice, seasoned vegetables, egg, and gochujang in a heated stone bowl. The useful decisions are draining the toppings well, warming the bowl gradually, and watching the rice at the edge rather than relying on one fixed cooking time.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">The History: Royal Origins and Winter Comfort</h2>",
+                "<h2 class=\"wp-block-heading\">What the Stone Bowl Changes</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Dolsot Bibimbap sets itself apart from regular bibimbap by being served in a blazing hot stone bowl (dolsot) that continues cooking your food right at the table. While different regions like Jeonju and Jinju have their own signature bibimbap styles, the stone bowl method gained massive popularity particularly during Korea&#8217;s frigid winters – because who doesn&#8217;t want a meal that keeps itself warm?</p>",
+                "<p class=\"wp-block-paragraph\">Unlike regular bibimbap, this version continues to cook after the rice enters the heated bowl. Residual heat keeps the dish hot and can crisp the rice where it touches the oiled surface. The result depends on the bowl, stove, rice temperature, and moisture in the toppings.</p>",
+            ),
             (
                 "<p class=\"wp-block-paragraph\">Some food historians believe it evolved from &#8220;Gujeolpan,&#8221; a royal court dish from the Joseon Dynasty. Either way, it beautifully reflects Korean food philosophy – harmoniously bringing together multiple ingredients in a single vessel.</p>",
                 "<p class=\"wp-block-paragraph\">The exact origin of the modern stone-bowl presentation is not settled. What matters in the kitchen is the method: a well-heated bowl keeps the meal hot and creates the crisp rice layer called nurungji.</p>",
@@ -50,8 +63,104 @@ POST_OVERRIDES = {
                 "<li>At restaurants, the bowl arrives extremely hot; exact temperatures vary by bowl and stove.</li>",
             ),
             (
+                "<li>If making at home, preheat your stone bowl on medium heat for 5-7 minutes</li>",
+                "<li>At home, warm the bowl gradually according to its manufacturer’s direct-heat instructions.</li>",
+            ),
+            (
+                "<li>Patience is key! Don&#8217;t mix everything immediately – let the rice develop that beautiful crust for 1-2 minutes</li>",
+                "<li>Before mixing, listen for a steady sizzle and check whether rice at the edge has begun to turn crisp. The time varies by bowl and heat source.</li>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">5 Key Points for Perfect Dolsot Bibimbap</h2>",
+                "<h2 class=\"wp-block-heading\">Five Checks for a Crisp Rice Layer</h2>",
+            ),
+            (
+                "<li><strong>Proper preheating</strong>: A thoroughly heated stone bowl is non-negotiable for great nurungji.</li>",
+                "<li><strong>Gradual preheating</strong>: Follow the bowl maker’s heat instructions and avoid sudden temperature changes.</li>",
+            ),
+            (
+                "<li><strong>Sesame oil magic</strong>: Don&#8217;t skimp on quality sesame oil – it&#8217;s the secret flavor enhancer.</li>",
+                "<li><strong>Oil coverage</strong>: Brush a thin, even film over the cooking surface so the rice can crisp without becoming greasy.</li>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">Regional Variations &amp; Creative Twists</h2>",
+                "<h2 class=\"wp-block-heading\">Topping Options and Their Tradeoffs</h2>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Jeonju Style</h3>",
+                "<h3 class=\"wp-block-heading\">Raw or Cooked Beef</h3>",
+            ),
+            (
+                "<li>Famous for using raw beef (yukhoe)</li>",
+                "<li>Raw beef requires an appropriate source and careful handling; cooked bulgogi is the simpler home option.</li>",
+            ),
+            (
+                "<li>Relies on rich beef broth rather than heavy sesame oil</li>",
+                "<li>Using broth to cook the rice adds flavor but also adds moisture, which can reduce crisping.</li>",
+            ),
+            (
+                "<li>Generous with the bean sprouts</li>",
+                "<li>Bean sprouts should be cooked and drained before they go into the bowl.</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Seoul Style</h3>",
+                "<h3 class=\"wp-block-heading\">Meat and Vegetable Choices</h3>",
+            ),
+            (
+                "<li>Often features sautéed bulgogi or chicken</li>",
+                "<li>Use cooked bulgogi, cooked chicken, or omit meat.</li>",
+            ),
+            (
+                "<li>Incorporates a wider variety of seasonal vegetables</li>",
+                "<li>Choose a few vegetables with contrasting texture and drain each one well.</li>",
+            ),
+            (
+                "<li>More liberal with the sesame oil</li>",
+                "<li>Add sesame oil sparingly at first; more can be mixed in at the table.</li>",
+            ),
+            (
+                "<h3 class=\"wp-block-heading\">Gangwon Province Style</h3>",
+                "<h3 class=\"wp-block-heading\">Grain and Greens</h3>",
+            ),
+            (
+                "<li>Highlights foraged mountain vegetables</li>",
+                "<li>Use only correctly identified, food-safe greens and cook them as required.</li>",
+            ),
+            (
+                "<li>Sometimes uses rice mixed with buckwheat</li>",
+                "<li>Mixed grains can be used, but their moisture and texture change the crust.</li>",
+            ),
+            (
+                "<li>Prefers an extra-crispy nurungji layer</li>",
+                "<li>For a firmer crust, use warm rice with a dry surface and wait for browning before mixing.</li>",
+            ),
+            (
                 "<li><strong>Far-infrared emission</strong>: The stone actually emits rays that enhance the natural flavors of your food.</li>",
                 "<li><strong>Steady residual heat</strong>: The heavy bowl continues cooking the rice after it leaves the burner.</li>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">The stone bowl isn&#8217;t just for show – it&#8217;s a piece of culinary engineering that Korean cooks have perfected over centuries. Usually made from granite or basalt, these bowls offer some serious cooking advantages:</p>",
+                "<p class=\"wp-block-paragraph\">A heavy bowl stores heat and transfers it to the rice after assembly. Materials and direct-heat ratings vary, so identify the cookware and follow its instructions rather than assuming every stone bowl works on every stove.</p>",
+            ),
+            (
+                "<li><strong>Nurungji creation</strong>: That magical crispy rice layer that forms where rice meets stone – Korea&#8217;s answer to paella&#8217;s socarrat.</li>",
+                "<li><strong>Nurungji formation</strong>: Rice touching the hot, lightly oiled surface loses moisture and browns into a crisp layer.</li>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">A Bowl of Memories, A Warmth Like No Other</h2>",
+                "<h2 class=\"wp-block-heading\">What This Version Has and Has Not Verified</h2>",
+            ),
+            (
+                "<li>Dolsot bibimbap is the perfect complete meal in a single dish.</li>",
+                "<li>Dolsot bibimbap can be served as a one-bowl meal.</li>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Dolsot bibimbap isn&#8217;t just dinner – it&#8217;s Korean food philosophy made tangible. In a single bowl, you experience the harmony of diverse ingredients, the balance of hot and cold, the contrast of tender and crispy. It&#8217;s mindful eating at its most delicious.</p>",
+                "<p class=\"wp-block-paragraph\">This inherited recipe preserves its ingredient list and basic method. KFOOD Journal has not received an owner cooking log confirming the exact preheating time, yield, or result for a particular stone bowl, so use visual and audible cues and follow the cookware instructions.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Why not treat yourself this weekend? Whether you visit your local Korean restaurant or attempt making it at home, there&#8217;s something magical about that sizzling stone bowl, especially during these chilly days. The whole-body warmth that comes from this meal is an experience that goes beyond just satisfying hunger.</p>",
+                "<p class=\"wp-block-paragraph\">For the first attempt, prepare the toppings before heating the bowl and keep the heat moderate. That leaves enough time to assemble the dish without scorching the rice.</p>",
             ),
         ],
         "append": """
@@ -67,7 +176,10 @@ POST_OVERRIDES = {
 <p class="wp-block-paragraph">A small cast-iron skillet will not produce exactly the same table-side experience, but it can make a good crisp rice crust. Brush the hot skillet lightly with oil, press in warm rice, add the toppings, and cook over medium-low heat until the edges audibly sizzle. Protect the table with a heatproof trivet.</p>
 
 <h2 class="wp-block-heading">Stone Bowl Safety</h2>
-<p class="wp-block-paragraph">Check the manufacturer’s instructions before using a bowl on direct heat. Warm stone cookware gradually, keep it away from cold water while hot, and use dry oven mitts. The bowl remains hot long after serving. Use a fully cooked egg for diners who avoid raw or undercooked eggs.</p>
+<p class="wp-block-paragraph">Check the manufacturer’s instructions before using a bowl on direct heat. Warm stone cookware gradually, keep it away from cold water while hot, and use dry oven mitts. The bowl remains hot long after serving. USDA guidance recommends cooking eggs until the yolk is firm; use pasteurized eggs or egg products when serving eggs raw or undercooked.</p>
+
+<h2 class="wp-block-heading">Sources and Verification Limit</h2>
+<p class="wp-block-paragraph">Egg handling follows the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table">USDA shell egg guidance</a>, and reheating guidance follows the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA leftovers guidance</a>. This inherited recipe is not labeled kitchen-tested because no owner cooking log was supplied for this review.</p>
 
 <p class="wp-block-paragraph">New to Korean cooking? Start with our <a href="/korean-cooking-for-beginners/">five-dish Korean cooking plan</a>, or compare this recipe with <a href="/bibimbap/">classic bibimbap</a> and <a href="/bulgogi/">bulgogi</a>.</p>
 """,
