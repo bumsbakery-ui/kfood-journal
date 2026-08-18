@@ -33,6 +33,90 @@ RECIPE_TIMES = {
 }
 
 POST_OVERRIDES = {
+    "sundubu-jjigae": {
+        "title": "Sundubu Jjigae Recipe: Korean Soft Tofu Stew",
+        "seo_title": "Sundubu Jjigae Recipe: Soft Tofu Stew | KFOOD",
+        "lastmod": "2026-08-18",
+        "excerpt": (
+            "Make sundubu jjigae with soft tofu, gochugaru, shellfish, and optional beef, "
+            "with practical heat control, substitutions, and food-safety notes."
+        ),
+        "replacements": [
+            (
+                "<p class=\"wp-block-paragraph\">Hello everyone! This is Kfood Journal. Today, we&#8217;re introducing Sundubu-jjigae, a beloved Korean stew that perfectly balances the silky smoothness of soft tofu with the bold spiciness of Korean chili flakes. This comforting dish warms both body and soul, especially during cold winter months.</p>",
+                "<p class=\"wp-block-paragraph\">Sundubu jjigae is a Korean soft-tofu stew built around a seasoned broth, gochugaru, and tender tofu. This version includes shellfish and optional beef; the key decisions are keeping the chili flakes from scorching, adding the tofu late, and seasoning only after the seafood has flavored the broth.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">The History of Sundubu-jjigae: From Home Kitchens to Global Sensation</h2>",
+                "<h2 class=\"wp-block-heading\">What Defines This Sundubu Jjigae</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Sundubu-jjigae has its roots in traditional Korean home cooking, where freshly made soft tofu was celebrated for its delicate texture and nutritional benefits. The dish gained tremendous popularity in the 1980s and 1990s, with specialized restaurants called &#8220;Sundubu-jip&#8221; emerging throughout Korea. It has since become a staple in Korean communities abroad, particularly in Los Angeles&#8217; Koreatown. Recently, with the global rise of Korean culture, Sundubu-jjigae has captivated international palates as one of Korea&#8217;s most beloved culinary exports.</p>",
+                "<p class=\"wp-block-paragraph\">The recipe uses soft tofu for its delicate texture and builds the broth with garlic, soup soy sauce, gochugaru, shellfish, and optional beef. Because the shellfish and fish sauce both add salt, taste the broth near the end before adding extra salt.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">5 Golden Secrets for Perfect Sundubu-jjigae</h2>",
+                "<h2 class=\"wp-block-heading\">Five Checks While Cooking</h2>",
+            ),
+            (
+                "<li><strong>Use Fresh Soft Tofu</strong>: If possible, use homemade or freshly made soft tofu. The silky texture is the highlight of this dish.</li>",
+                "<li><strong>Choose soft tofu</strong>: Use a package labeled soft or extra-soft tofu and handle it in large pieces so it does not disappear into the broth.</li>",
+            ),
+            (
+                "<li><strong>Leverage Shellfish Umami</strong>: Clams and mussels add natural depth and seafood flavor to the broth. Ensure they&#8217;re properly cleaned to avoid any sand.</li>",
+                "<li><strong>Clean the shellfish</strong>: Rinse and purge shellfish as appropriate for the product so sand does not enter the broth.</li>",
+            ),
+            (
+                "<li><strong>Use a Stone Pot</strong>: A traditional ttukbaegi (stone pot) or earthenware pot retains heat longer, keeping the stew bubbling hot throughout the meal.</li>",
+                "<li><strong>Use a suitable pot</strong>: A Korean earthenware ttukbaegi retains heat, but a small saucepan also works. Follow the cookware maker&#8217;s direct-heat instructions.</li>",
+            ),
+            (
+                "<li><strong>Timing the Red Pepper Flakes</strong>: Briefly toast the gochugaru in oil for a nutty aroma, but be careful not to burn it as it can develop a bitter taste.</li>",
+                "<li><strong>Watch the gochugaru</strong>: Stir it briefly over moderate heat and add the liquid promptly if it darkens quickly; scorched chili makes the broth bitter.</li>",
+            ),
+            (
+                "<li><strong>Add the Egg Last</strong>: The egg is best enjoyed when still soft and partially cooked. Add it just before serving.</li>",
+                "<li><strong>Handle the egg safely</strong>: Add it near the end and cook until the white and yolk are firm, or use a pasteurized egg if serving it undercooked.</li>",
+            ),
+            (
+                "<li>Serve immediately while bubbling hot, allowing the egg to cook to a soft consistency at the table.</li>",
+                "<li>Keep the stew at a simmer until the egg white and yolk are firm, then serve carefully because the pot remains hot.</li>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">Sundubu-jjigae is traditionally served in a hot stone pot or earthenware bowl, brought bubbling to the table. It&#8217;s typically enjoyed with rice and accompanied by banchan (side dishes) such as kimchi or pickled vegetables. For a more substantial meal, pair it with a simple Korean pancake like pajeon (green onion pancake) or kimchijeon (kimchi pancake). On cold days, pairing with soju or makgeolli creates a warming combination that&#8217;s perfect for chasing away the chill. The level of spiciness can be adjusted by varying the amount of chili flakes or adding fresh chili peppers.</p>",
+                "<p class=\"wp-block-paragraph\">Serve the stew with rice and optional banchan such as kimchi or pickled vegetables. Adjust the heat with the amount of gochugaru and fresh chili, but reduce one at a time so the seasoning remains easy to judge.</p>",
+            ),
+            (
+                "<h2 class=\"wp-block-heading\">A Bowl of Warmth, Sundubu-jjigae&#8217;s Embrace</h2>",
+                "<h2 class=\"wp-block-heading\">What This Version Has and Has Not Verified</h2>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">A bowl of Sundubu-jjigae is more than just food—it&#8217;s a warm embrace of Korean care and wisdom that soothes both body and soul. The harmonious meeting of silky soft tofu and spicy broth offers a moment of pure culinary pleasure, a brief respite from the busyness of everyday life. On a cold winter day, what could be more comforting than sharing a steaming pot of Sundubu-jjigae with those you love?</p>",
+                "<p class=\"wp-block-paragraph\">This inherited recipe preserves its ingredient list and basic cooking order. KFOOD Journal has not received an owner cooking log confirming the exact yield, heat level, or result, so the page is not labeled kitchen-tested. Use the visible cues in the method and adjust seasoning to the ingredients in your pot.</p>",
+            ),
+            (
+                "<p class=\"wp-block-paragraph\">#KoreanFood #Sundubu #SpicyStew #WinterFood #HealthyEating #ComfortFood #KfoodJournal</p>",
+                "<p class=\"wp-block-paragraph\">For a first attempt, prepare every ingredient before heating the oil. This makes it easier to add liquid before the gochugaru scorches.</p>",
+            ),
+        ],
+        "append": """
+<h2 class="wp-block-heading">Troubleshooting</h2>
+<ul class="wp-block-list">
+<li><strong>The broth tastes bitter:</strong> The gochugaru may have scorched. Use moderate heat and add the stock immediately after a brief stir.</li>
+<li><strong>The tofu breaks apart:</strong> Add it in large pieces after the broth is seasoned, then stir around rather than through the tofu.</li>
+<li><strong>The broth is too salty:</strong> Use either fish sauce or extra salt first, then taste after the shellfish opens before adding more.</li>
+<li><strong>The stew seems thin:</strong> Let the broth simmer before adding the tofu instead of extending the final boil, which can break the tofu.</li>
+</ul>
+
+<h2 class="wp-block-heading">Food Safety and Storage</h2>
+<p class="wp-block-paragraph">USDA guidance recommends cooking eggs until both the white and yolk are firm; use pasteurized eggs or egg products if serving eggs raw or undercooked. Refrigerate leftovers within two hours, use them within three to four days, and reheat them to 165°F (74°C).</p>
+
+<h2 class="wp-block-heading">Sources and Verification Limit</h2>
+<p class="wp-block-paragraph">Egg handling follows the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table">USDA shell egg guidance</a>, and storage follows the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA leftovers guidance</a>. This inherited recipe is not described as kitchen-tested because no owner cooking log was supplied for this review.</p>
+
+<p class="wp-block-paragraph">New to Korean cooking? Start with the <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a>, then compare this method with <a href="/kimchi-jjigae/">kimchi jjigae</a> or <a href="/doenjang-jjigae/">doenjang jjigae</a>.</p>
+""",
+    },
     "dolsot-bibimbap": {
         "title": "Dolsot Bibimbap Recipe: Crispy Rice in a Korean Stone Bowl",
         "seo_title": "Dolsot Bibimbap Recipe: Crispy Rice | KFOOD Journal",
