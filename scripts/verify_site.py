@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import html
 import re
 import sys
 from datetime import date
@@ -235,6 +236,30 @@ def main() -> None:
         value = (ROOT / slug / "index.html").read_text(encoding="utf-8")
         if f"<title>{title}</title>" not in value:
             fail(f"{slug} has an unexpected search title")
+
+    # Keep the repaired Korean soybean preparation order and raw-HTML anchors.
+    kongguksu = (ROOT / "kongguksu-2/index.html").read_text(encoding="utf-8")
+    kongguksu_data = recipe_schema(kongguksu)
+    steps = kongguksu_data["recipeInstructions"]
+    if len(steps) != 8:
+        fail("Korean kongguksu should retain its eight explicit cooking steps")
+    for index, step in enumerate(steps, 1):
+        matching = re.findall(
+            rf'<li\b[^>]*id="recipe-step-{index}"[^>]*>(.*?)</li>',
+            kongguksu, re.S,
+        )
+        if len(matching) != 1:
+            fail(f"Korean kongguksu step {index} needs one visible anchor")
+        visible = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", matching[0]))).strip()
+        if visible != step["text"]:
+            fail(f"Korean kongguksu step {index} differs from visible content")
+    for index, marker in ((0, "콩 준비"), (1, "콩 속까지 익도록 삶습니다"), (2, "식히기"), (3, "콩국물 갈기")):
+        if marker not in steps[index]["text"]:
+            fail("Korean kongguksu must prepare, cook and cool soybeans before blending")
+    if "불리기만 한 콩을 그대로 갈지 마세요" not in steps[1]["text"]:
+        fail("Korean kongguksu is missing the uncooked-soybean warning")
+    if len(kongguksu_data["recipeIngredient"]) != 12:
+        fail("Korean kongguksu ingredient list changed unexpectedly")
 
     print(
         f"Verified {len(html_files)} HTML files, {len(POSTS)} recipe schemas, "

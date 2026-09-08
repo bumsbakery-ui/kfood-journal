@@ -33,6 +33,58 @@ RECIPE_TIMES = {
 }
 
 POST_OVERRIDES = {
+    "kongguksu-2": {
+        "title": "콩국수 레시피",
+        "seo_title": "콩국수 레시피 | KFOOD Journal",
+        "lastmod": "2026-09-08",
+        "excerpt": "마른 콩은 불린 뒤 삶고 식혀서 갈아주세요. 콩국수의 기존 재료량, 삶은 콩 선택지, 콩국물 농도와 소면 준비 순서를 정리했습니다.",
+        "content": """
+<p class="wp-block-paragraph">콩국수를 준비할 때 먼저 구분할 것은 마른 콩과 이미 삶은 콩입니다. <strong>마른 콩은 불리기만 한 상태로 갈지 말고, 먼저 삶아 익힌 뒤 식혀서 갈아주세요.</strong> 아래에서는 두 재료의 준비 경로를 나누고, 콩국물과 소면을 따로 준비하는 순서로 설명합니다.</p>
+
+<h2 class="wp-block-heading">먼저 확인할 기준</h2>
+<p class="wp-block-paragraph">메주콩 1컵과 삶은 콩 2컵은 기존 글의 대체 선택지이므로 둘 다 넣지 않습니다. 마른 콩을 삶았을 때의 정확한 부피나 완성 수율이 검증된 환산식은 아닙니다. 차가운 물 4–5컵은 갈기와 농도 조절에 쓰는 양이며, 불리기·삶기·헹굼용 물은 별도로 준비합니다.</p>
+
+<h2 class="wp-block-heading">재료</h2>
+<ul class="wp-block-list">
+<li>마른 메주콩 1컵 또는 이미 삶은 콩 2컵</li>
+<li>차가운 물 4–5컵 — 콩국물용</li>
+<li>소금 1작은술 — 기호에 따라 조절</li>
+<li>볶은 깨 1큰술</li>
+<li>설탕 1/2작은술 — 선택사항</li>
+<li>소면 200g</li>
+<li>얼음</li>
+<li>오이 1개 — 채 썰기</li>
+<li>방울토마토 2개 — 반으로 자르기</li>
+<li>삶은 달걀 1개 — 슬라이스</li>
+<li>볶은 깨 — 뿌리기용</li>
+<li>검은깨 약간 — 선택사항</li>
+</ul>
+
+<h2 class="wp-block-heading">콩국수 조리 방법</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>콩 준비:</strong> 마른 메주콩 1컵을 사용하는 경우 씻어 넉넉한 물에 하룻밤 불립니다. 이미 삶은 콩 2컵을 사용하는 경우에는 제품의 보관·섭취 안내에 맞게 준비하고, 마른 콩을 불리고 삶는 과정을 건너뜁니다.</li>
+<li id="recipe-step-2"><strong>마른 콩 경로 — 삶기:</strong> 불린 콩의 물을 버리고 헹군 뒤 냄비에 넣습니다. 콩이 잠길 만큼 새 물을 붓고 끓입니다. 끓기 시작하면 넘치지 않게 불을 조절하면서 콩 속까지 익도록 삶습니다. 불리기만 한 콩을 그대로 갈지 마세요. 콩의 상태와 조리 조건에 따라 필요한 시간이 달라지므로 이 글에서는 고정 삶기시간을 제시하지 않습니다.</li>
+<li id="recipe-step-3"><strong>마른 콩 경로 — 식히기:</strong> 삶은 콩을 건져 찬물로 식히고 물기를 뺍니다. 뜨거운 콩을 밀폐형 믹서에 넣지 말고, 식힌 다음 갈기 단계로 넘어갑니다.</li>
+<li id="recipe-step-4"><strong>콩국물 갈기:</strong> 삶아서 식힌 콩 또는 준비한 삶은 콩과 차가운 물 4컵을 믹서에 넣어 곱게 갑니다. 한 번에 들어가지 않으면 나누어 갈고, 덩어리가 남는지 확인합니다. 제품의 최대 용량과 사용 안내를 지킵니다.</li>
+<li id="recipe-step-5"><strong>농도와 간 맞추기:</strong> 더 매끈한 국물을 원하면 체나 면포로 거릅니다. 너무 되직하면 콩국물용 물의 총량 4–5컵 범위에서 조금씩 더합니다. 소금 1작은술과 볶은 깨 1큰술을 준비해 기호에 맞게 넣고, 단맛을 원할 때만 설탕 1/2작은술을 사용합니다.</li>
+<li id="recipe-step-6"><strong>차갑게 준비:</strong> 콩국물은 깨끗한 용기에 담아 냉장고에서 차게 둡니다. 면을 준비하는 동안에도 냉장 보관하고, 국물과 면은 먹기 직전에 합칩니다.</li>
+<li id="recipe-step-7"><strong>소면 삶기:</strong> 별도 냄비에 물을 끓이고 소면 200g을 포장지 안내에 따라 삶습니다. 삶은 면은 찬물에 헹궈 식힌 뒤 물기를 충분히 뺍니다.</li>
+<li id="recipe-step-8"><strong>담아내기:</strong> 그릇에 면을 담고 가라앉은 내용물이 섞이도록 저은 차가운 콩국물을 붓습니다. 오이, 방울토마토, 삶은 달걀을 올리고 볶은 깨와 선택한 검은깨를 뿌립니다. 얼음은 농도를 보면서 더하고 바로 먹습니다.</li>
+</ol>
+
+<h2 class="wp-block-heading">농도와 준비 방식의 차이</h2>
+<p class="wp-block-paragraph">콩국물이 묽어지는 것을 막으려면 면의 물기를 빼고, 처음부터 물 5컵과 얼음을 모두 넣지 않는 편이 조절하기 쉽습니다. 체에 거르면 더 매끈해지지만 걸러지는 고형분 때문에 양과 농도가 달라질 수 있습니다. 마른 콩은 불리기와 삶기가 필요하고, 이미 삶은 콩은 준비가 간단하지만 제품의 간과 수분 상태를 확인해야 합니다.</p>
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="540" height="360" src="/assets/post-images/2025/05/Kongguksu-2.png" alt="콩국수와 고명을 담은 그릇"></figure>
+
+<h2 class="wp-block-heading">참고 자료와 확인 범위</h2>
+<p class="wp-block-paragraph">불린 콩을 삶고 식힌 다음 간다는 순서는 <a href="https://www.maangchi.com/recipe/kongguksu">Maangchi의 콩국수 레시피</a>와 <a href="https://www.koreanbapsang.com/kongguksu-chilled-soy-milk-noodle-soup/">Korean Bapsang의 콩국수 레시피</a>에서 확인했습니다. 두 자료의 조리 조건과 시간이 달라 그 수치를 이 배합에 그대로 적용하지 않았습니다. 자료 확인일은 2026년 9월 8일입니다.</p>
+<p class="wp-block-paragraph">기존 재료량을 유지하면서 빠진 조리 단계를 보완했습니다. 작성자의 실조리 기록이 제공되지 않아 정확한 완성 수율, 고정 조리시간, 시식 결과를 검증 완료로 표시하지 않습니다. 영양 수치나 건강 효능도 추가하지 않습니다.</p>
+
+<h2 class="wp-block-heading">재료에 따른 준비 순서</h2>
+<p class="wp-block-paragraph">먼저 가진 콩이 마른 콩인지 이미 삶은 콩인지 확인하세요. 그다음 콩국물부터 준비해 차게 두고 면은 먹기 직전에 삶으면 준비 순서를 나누기 쉽습니다. 다른 면 요리는 <a href="/kalguksu-kr/">칼국수 레시피</a>, 한식 준비의 기본은 <a href="/ko/korean-cooking-for-beginners/">한식 입문 안내</a>를 참고하세요.</p>
+""",
+    },
     "sundubu-jjigae": {
         "title": "Sundubu Jjigae Recipe: Korean Soft Tofu Stew",
         "seo_title": "Sundubu Jjigae Recipe: Soft Tofu Stew | KFOOD",
@@ -825,7 +877,7 @@ def apply_post_overrides(post: dict) -> dict:
     updated = dict(post)
     updated["title"] = override["title"]
     updated["excerpt"] = override["excerpt"]
-    content = updated.get("content", "")
+    content = override.get("content", updated.get("content", ""))
     for old, new in override.get("replacements", []):
         content = content.replace(old, new)
     updated["content"] = content + override.get("append", "")
