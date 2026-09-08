@@ -33,6 +33,58 @@ RECIPE_TIMES = {
 }
 
 POST_OVERRIDES = {
+    "kongguksu": {
+        "title": "Kongguksu Recipe",
+        "seo_title": "Kongguksu Recipe | KFOOD Journal",
+        "lastmod": "2026-09-08",
+        "excerpt": "Cook soaked soybeans, cool, then blend. Make kongguksu with the original ingredient amounts, a cooked-bean option, and broth and noodle steps.",
+        "content": """
+<p class="wp-block-paragraph">For kongguksu, first check whether your soybeans are dried or already cooked. <strong>Do not blend soybeans that have only been soaked. Cook them first, then cool them before blending.</strong> This recipe separates those two preparation routes and explains how to prepare the chilled soybean broth and noodles.</p>
+
+<h2 class="wp-block-heading">Before You Start</h2>
+<p class="wp-block-paragraph">Use either 1 cup dried soybeans or 2 cups already cooked soybeans, not both. These are the inherited recipe's alternatives, not a verified dry-to-cooked yield conversion. The 4–5 cups of cold water below are for blending and adjusting the broth; soaking, cooking, and rinsing water are separate. This English version retains 8 oz noodles, while the Korean version retains its original 200g; those amounts are not presented as equivalent.</p>
+
+<h2 class="wp-block-heading">Ingredients</h2>
+<ul class="wp-block-list">
+<li>1 cup dried soybeans or 2 cups already cooked soybeans</li>
+<li>4–5 cups ice-cold water — for the broth</li>
+<li>1 teaspoon salt — adjust to taste</li>
+<li>1 tablespoon toasted sesame seeds</li>
+<li>1/2 teaspoon sugar — optional</li>
+<li>8 oz thin wheat noodles (somyeon)</li>
+<li>Ice cubes</li>
+<li>1 cucumber — julienned</li>
+<li>2 cherry tomatoes — halved</li>
+<li>1 hard-boiled egg — sliced</li>
+<li>Toasted sesame seeds — for sprinkling</li>
+<li>A pinch of black sesame seeds — optional</li>
+</ul>
+
+<h2 class="wp-block-heading">Cooking Method</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>Prepare the beans:</strong> If using 1 cup dried soybeans, rinse and soak them overnight in plenty of water. If using 2 cups already cooked soybeans, prepare them according to the product's storage and serving instructions and skip the dried-bean soaking and cooking stages.</li>
+<li id="recipe-step-2"><strong>Dried-bean route — cook:</strong> Drain and rinse the soaked soybeans, then put them in a saucepan with enough fresh water to cover them. Bring to a boil, adjust the heat to prevent boiling over, and continue cooking until the beans are cooked through. Do not blend soybeans that have only been soaked. The time depends on the beans and cooking conditions, so no fixed cooking time is claimed for this inherited batch.</li>
+<li id="recipe-step-3"><strong>Dried-bean route — cool:</strong> Drain the cooked beans, cool them in cold water, and drain again. Let the beans cool before blending; do not put hot beans in a sealed blender.</li>
+<li id="recipe-step-4"><strong>Blend the broth:</strong> Put the cooked and cooled beans, or the prepared already cooked beans, in a blender with 4 cups of ice-cold water. Blend until smooth, checking for remaining lumps. Work in batches if needed and follow the blender's capacity and operating instructions.</li>
+<li id="recipe-step-5"><strong>Adjust consistency and seasoning:</strong> For a smoother broth, pass it through a fine sieve or cheesecloth. If too thick, gradually add cold water within the total 4–5 cup broth allowance. Have 1 teaspoon salt and 1 tablespoon toasted sesame seeds ready and season to taste. Use the optional 1/2 teaspoon sugar only if you want sweetness.</li>
+<li id="recipe-step-6"><strong>Chill the broth:</strong> Transfer to a clean container and chill in the refrigerator. Keep the broth refrigerated while preparing the noodles and combine them just before eating.</li>
+<li id="recipe-step-7"><strong>Cook the noodles:</strong> Bring a separate pot of water to a boil and cook 8 oz somyeon according to the package instructions. Rinse the cooked noodles in cold water to cool them, then drain well.</li>
+<li id="recipe-step-8"><strong>Assemble and serve:</strong> Place the noodles in a bowl. Stir any settled solids back into the cold broth and pour it over the noodles. Add the cucumber, tomatoes, and hard-boiled egg; sprinkle with toasted sesame seeds and optional black sesame seeds. Add ice while checking the broth consistency and serve immediately.</li>
+</ol>
+
+<h2 class="wp-block-heading">Consistency and Bean Choices</h2>
+<p class="wp-block-paragraph">Drain the noodles well and avoid adding all 5 cups of water and the ice at once, so you can adjust the broth gradually. Straining produces a smoother texture but removes some solids and changes the amount and consistency. Dried soybeans require soaking and cooking; already cooked beans simplify preparation, but check their seasoning and moisture before using them.</p>
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="540" height="360" src="/assets/post-images/2025/05/Kongguksu-2.png" alt="A bowl of kongguksu with toppings"></figure>
+
+<h2 class="wp-block-heading">Sources and Verification Limits</h2>
+<p class="wp-block-paragraph">The cook-then-cool-before-blending sequence is supported by <a href="https://www.maangchi.com/recipe/kongguksu">Maangchi's kongguksu recipe</a> and <a href="https://www.koreanbapsang.com/kongguksu-chilled-soy-milk-noodle-soup/">Korean Bapsang's kongguksu recipe</a>, checked on September 8, 2026. Their conditions and timings differ, so those timings have not been copied into this batch.</p>
+<p class="wp-block-paragraph">The existing ingredient amounts are retained, with the missing cooking stage restored. No owner cooking log was supplied, so this page does not claim a verified yield, fixed cooking time, or tasting result. No nutrition figures or health-benefit claims have been added.</p>
+
+<h2 class="wp-block-heading">Plan the Meal</h2>
+<p class="wp-block-paragraph">Check which type of beans you have, prepare the broth first, and keep it cold while you cook the noodles shortly before serving. For a hot noodle dish, see <a href="/kalguksu/">kalguksu</a>; for meal planning, use the <a href="/korean-cooking-for-beginners/">Korean cooking starter guide</a>.</p>
+""",
+    },
     "kongguksu-2": {
         "title": "콩국수 레시피",
         "seo_title": "콩국수 레시피 | KFOOD Journal",

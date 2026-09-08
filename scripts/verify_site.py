@@ -12,6 +12,8 @@ from pathlib import Path
 from urllib.parse import unquote
 from xml.etree import ElementTree
 
+from build_static_recipes import POST_OVERRIDES
+
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS = json.loads((ROOT / "assets/data/posts-full.json").read_text(encoding="utf-8"))
@@ -237,29 +239,55 @@ def main() -> None:
         if f"<title>{title}</title>" not in value:
             fail(f"{slug} has an unexpected search title")
 
-    # Keep the repaired Korean soybean preparation order and raw-HTML anchors.
-    kongguksu = (ROOT / "kongguksu-2/index.html").read_text(encoding="utf-8")
-    kongguksu_data = recipe_schema(kongguksu)
-    steps = kongguksu_data["recipeInstructions"]
-    if len(steps) != 8:
-        fail("Korean kongguksu should retain its eight explicit cooking steps")
-    for index, step in enumerate(steps, 1):
-        matching = re.findall(
-            rf'<li\b[^>]*id="recipe-step-{index}"[^>]*>(.*?)</li>',
-            kongguksu, re.S,
-        )
-        if len(matching) != 1:
-            fail(f"Korean kongguksu step {index} needs one visible anchor")
-        visible = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", matching[0]))).strip()
-        if visible != step["text"]:
-            fail(f"Korean kongguksu step {index} differs from visible content")
-    for index, marker in ((0, "콩 준비"), (1, "콩 속까지 익도록 삶습니다"), (2, "식히기"), (3, "콩국물 갈기")):
-        if marker not in steps[index]["text"]:
-            fail("Korean kongguksu must prepare, cook and cool soybeans before blending")
-    if "불리기만 한 콩을 그대로 갈지 마세요" not in steps[1]["text"]:
-        fail("Korean kongguksu is missing the uncooked-soybean warning")
-    if len(kongguksu_data["recipeIngredient"]) != 12:
-        fail("Korean kongguksu ingredient list changed unexpectedly")
+    # Protect both languages, including legacy detail and JS archive data feeds.
+    summaries = json.loads((ROOT / "assets/data/posts.json").read_text(encoding="utf-8"))
+    markers = {
+        "kongguksu-2": ("콩 준비", "콩 속까지 익도록 삶습니다", "식히기", "콩국물 갈기", "불리기만 한 콩을 그대로 갈지 마세요", "소면 200g"),
+        "kongguksu": ("Prepare the beans", "beans are cooked through", "route — cool", "Blend the broth", "Do not blend soybeans that have only been soaked", "8 oz thin wheat noodles"),
+    }
+    for slug, required in markers.items():
+        value = (ROOT / slug / "index.html").read_text(encoding="utf-8")
+        data = recipe_schema(value)
+        steps = data["recipeInstructions"]
+        if len(steps) != 8:
+            fail(f"{slug} should retain its eight explicit cooking steps")
+        for index, step in enumerate(steps, 1):
+            matching = re.findall(
+                rf'<li\b[^>]*id="recipe-step-{index}"[^>]*>(.*?)</li>', value, re.S,
+            )
+            if len(matching) != 1:
+                fail(f"{slug} step {index} needs one visible anchor")
+            visible = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", matching[0]))).strip()
+            if visible != step["text"]:
+                fail(f"{slug} step {index} differs from visible content")
+        for index, marker in enumerate(required[:4]):
+            if marker not in steps[index]["text"]:
+                fail(f"{slug} must prepare, cook and cool soybeans before blending")
+        if required[4] not in steps[1]["text"]:
+            fail(f"{slug} is missing the uncooked-soybean warning")
+        if len(data["recipeIngredient"]) != 12 or not any(required[5] in x for x in data["recipeIngredient"]):
+            fail(f"{slug} ingredient list or original noodle quantity changed unexpectedly")
+
+        source = next(post for post in POSTS if post["slug"] == slug)
+        summary = next(post for post in summaries if post["slug"] == slug)
+        override = POST_OVERRIDES[slug]
+        for field in ("title", "excerpt", "content"):
+            if source[field] != override[field]:
+                fail(f"{slug} legacy detail {field} is out of sync")
+        for field in ("title", "excerpt"):
+            if summary[field] != override[field]:
+                fail(f"{slug} JS archive {field} is out of sync")
+        if data["name"] != source["title"] or data["description"] != source["excerpt"]:
+            fail(f"{slug} schema metadata differs from legacy and archive data")
+        canonical = f"https://kfood.bumkok.com/{slug}/"
+        if f'<link rel="canonical" href="{canonical}">' not in value:
+            fail(f"{slug} canonical changed unexpectedly")
+        for language, target in (("en", "kongguksu"), ("ko", "kongguksu-2")):
+            if f'hreflang="{language}" href="https://kfood.bumkok.com/{target}/"' not in value:
+                fail(f"{slug} is missing its {language} alternate")
+        for forbidden in ("aggregateRating", "nutrition", "recipeYield", "prepTime", "cookTime", "totalTime"):
+            if forbidden in data:
+                fail(f"{slug} contains an unverified {forbidden}")
 
     print(
         f"Verified {len(html_files)} HTML files, {len(POSTS)} recipe schemas, "
