@@ -748,6 +748,56 @@ POST_OVERRIDES = {
 <p class="wp-block-paragraph">For a simple Korean meal, serve the fish with rice, kimchi, and one vegetable side. The <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a> explains how to build the rest of the table.</p>
 """,
     },
+    "kongnamul-gukbap": {
+        "title": "Kongnamul-Gukbap Recipe: Soybean Sprout Soup with Rice",
+        "lastmod": "2026-09-27",
+        "excerpt": "Make kongnamul-gukbap with soybean sprouts, broth, and cooked rice, with guidance on seasoning, cooking the sprouts, and adding an optional cooked egg.",
+        "content": """
+<p class="wp-block-paragraph">Make kongnamul-gukbap with soybean sprouts, broth, and cooked rice, with guidance on seasoning, cooking the sprouts, and adding an optional cooked egg.</p>
+<p class="wp-block-paragraph">The main choices are the sprouts, the saltiness of the stock, and when to add the rice. Use soybean sprouts labeled kongnamul, cook them thoroughly in the broth, then add freshly cooked rice near the end. Taste before adding more salt: stock, soy sauce, and optional fish sauce all contribute seasoning.</p>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="600" height="600" src="/assets/post-images/2025/06/Kongnamul-gukbap-3.png" alt="Kongnamul-gukbap with soybean sprouts and rice" class="wp-image-308" style="width:730px;height:auto" /></figure>
+<h2 class="wp-block-heading">Choose Soybean Sprouts</h2>
+<p class="wp-block-paragraph">Kongnamul means soybean sprouts. Check the package rather than buying an unspecified bag of bean sprouts: mung bean sprouts are a different ingredient. <a href="https://www.maangchi.com/recipe/kongnamul-gukbap">Maangchi's kongnamul-gukbap recipe</a> is a reference for this distinction; the beef or chicken stock version below retains this site's archived ingredient list and is not a reproduction of that recipe.</p>
+<h2 class="wp-block-heading">Kongnamul-Gukbap Ingredients</h2>
+<ul class="wp-block-list">
+<li>2 cups soybean sprouts (kongnamul), rinsed and drained</li>
+<li>6–8 cups clear beef or chicken stock</li>
+<li>1 cup freshly cooked short-grain rice, plus extra to serve if desired</li>
+<li>2 green onions, chopped</li>
+<li>3 cloves garlic, minced</li>
+<li>1 tablespoon sesame oil</li>
+<li>1 teaspoon soy sauce</li>
+<li>1/2 teaspoon grated ginger</li>
+<li>Up to 1 tablespoon fish sauce, optional; add gradually to taste</li>
+<li>Salt and white pepper, to taste</li>
+<li>A pinch of gochugaru (Korean chili flakes), optional</li>
+<li>1 egg per serving, optional; cook separately until white and yolk are firm</li>
+<li>Kimchi, optional, to serve alongside</li>
+</ul>
+<h2 class="wp-block-heading">Kongnamul-Gukbap Cooking Method</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>Prepare the ingredients.</strong> Rinse the soybean sprouts under running water, remove damaged pieces, and drain. Chop the green onions and prepare the garlic and ginger.</li>
+<li id="recipe-step-2"><strong>Start the broth.</strong> Warm the sesame oil in a large pot over medium heat. Add garlic and ginger, stir until fragrant without browning, then carefully add 6 cups of stock and bring to a boil.</li>
+<li id="recipe-step-3"><strong>Cook the sprouts.</strong> Add the soybean sprouts and return the broth to a boil, then simmer until the sprouts are thoroughly cooked. Do not stop at a brief blanch simply to retain crunch.</li>
+<li id="recipe-step-4"><strong>Season gradually.</strong> Add the soy sauce. If using fish sauce, add a little at a time and taste before adding more. Add white pepper and salt only as needed.</li>
+<li id="recipe-step-5"><strong>Add rice and green onions.</strong> Stir in the freshly cooked rice and chopped green onions, and simmer until hot throughout. Add some of the remaining stock if you prefer more broth, then taste again.</li>
+<li id="recipe-step-6"><strong>Finish and serve.</strong> Ladle into bowls. Add optional gochugaru and, if wanted, an egg cooked separately until both white and yolk are firm. Serve with optional kimchi and extra rice.</li>
+</ol>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="540" height="360" src="/assets/post-images/2025/06/Kongnamul-gukbap-5.png" alt="A bowl of kongnamul-gukbap" class="wp-image-310" style="width:730px;height:auto" /></figure>
+<h2 class="wp-block-heading">Adjust the Bowl to Your Taste</h2>
+<ul class="wp-block-list">
+<li><strong>Too salty:</strong> Add a little water, bring the soup back to a simmer, and taste again before adding any more seasoning.</li>
+<li><strong>Prefer firmer rice:</strong> Keep the cooked rice separate until serving and ladle the finished soup over it. Simmering rice in the pot gives a softer result.</li>
+<li><strong>Want less heat:</strong> Omit the gochugaru and offer it separately.</li>
+<li><strong>Prefer vegetable stock:</strong> Replace the beef or chicken stock and omit fish sauce. Check any kimchi served alongside for fish or seafood ingredients if you need a vegetarian meal.</li>
+</ul>
+<h2 class="wp-block-heading">Cooking Guidance and Recipe Limits</h2>
+<p class="wp-block-paragraph">The <a href="https://www.fda.gov/food/people-risk-foodborne-illness/fruits-veggies-and-juices-food-safety-moms-be">FDA's sprout guidance</a> recommends thorough cooking; rinsing alone does not remove all potential contamination. Its <a href="https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety">egg guidance</a> recommends cooking until both the white and yolk are firm. This recipe uses a separately cooked egg rather than relying on hot soup in a serving bowl to cook a raw one.</p>
+<p class="wp-block-paragraph">The quantities and stock choices come from this site's archived recipe. No owner cooking log was supplied to confirm yield, cooking time, or the finished balance, so this version is not labeled kitchen-tested. Begin with the smaller stock quantity and adjust the broth and rice to your preference.</p>
+<h2 class="wp-block-heading">Plan Your Next Korean Soup</h2>
+<p class="wp-block-paragraph">Start with the <a href="/korean-cooking-for-beginners/">Korean cooking guide for beginners</a> for pantry planning. Compare this broth with <a href="/miyeokguk/">miyeokguk, Korean seaweed soup</a>, or try <a href="/doenjang-jjigae/">doenjang jjigae, a soybean paste stew</a>, for a different soup base.</p>
+""",
+    },
 }
 
 BEGINNER_GUIDE_PATH = "/korean-cooking-for-beginners/"

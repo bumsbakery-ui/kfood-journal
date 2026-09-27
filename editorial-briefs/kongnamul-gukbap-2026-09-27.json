@@ -1,0 +1,40 @@
+{
+  "title": "콩나물국밥 영문 레시피의 재료·조리 기준 정리",
+  "reader_problem": "콩나물국밥의 재료와 조리 순서를 찾는 독자에게 숙주 표기, 근거 없는 숙취 효능과 서울 식당 체험이 혼재한다.",
+  "bottom_line": "콩나물 표기를 바로잡고 검증되지 않은 체험·효능 표현을 제거한다. 기존 육수 버전과 재료 분량은 보존하며 콩나물·달걀 익힘 안내를 출처에 맞게 정리한다.",
+  "decision_criteria": [
+    "콩나물과 숙주를 혼동하지 않는가",
+    "조리 단계와 재료가 보이는 본문 및 JSON-LD에 일치하는가",
+    "검증되지 않은 효능·체험·시간·수율을 추가하지 않는가"
+  ],
+  "evidence": [
+    {
+      "claim": "Maangchi의 콩나물국밥은 soybean sprouts를 사용한다. 이 페이지에서는 재료 식별 근거만 사용한다.",
+      "source": "https://www.maangchi.com/recipe/kongnamul-gukbap"
+    },
+    {
+      "claim": "FDA는 새싹채소를 충분히 익히도록 안내한다.",
+      "source": "https://www.fda.gov/food/people-risk-foodborne-illness/fruits-veggies-and-juices-food-safety-moms-be"
+    },
+    {
+      "claim": "FDA는 달걀 흰자와 노른자가 단단해질 때까지 익히도록 안내한다.",
+      "source": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+    },
+    {
+      "claim": "기존 글의 육수·양념 분량을 보존한다.",
+      "source": "kongnamul-gukbap/index.html",
+      "limit": "작성자 조리 기록 없음. 시험 조리·맛·정통성·소요 시간·수율을 검증한 것으로 표현하지 않는다."
+    }
+  ],
+  "author_notes": [],
+  "options": [
+    {
+      "name": "기존 글 근거 정리",
+      "best_for": "재료 오류와 효능·체험 표현을 먼저 고칠 때",
+      "tradeoff": "분량과 맛의 최종 검증에는 작성자 조리 기록이 필요하다."
+    }
+  ],
+  "recommended_action": "기존 URL과 대표 이미지를 보존하고 재료 오류, 체험·효능 문구, 익힘 안내를 정리한다. 입문 가이드·관련 국물 요리에 연결하고 생성 소스를 재빌드하여 검사한다.",
+  "affiliate_links": [],
+  "checked_at": "2026-09-27T11:16:22.509900+07:00"
+}
