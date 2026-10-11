@@ -33,6 +33,47 @@ RECIPE_TIMES = {
 }
 
 POST_OVERRIDES = {
+    "miyeokguk": {
+        "title": "Miyeokguk Recipe",
+        "seo_title": "Miyeokguk Recipe (Korean Seaweed Soup) | KFOOD Journal",
+        "lastmod": "2026-10-08",
+        "excerpt": "Make miyeokguk with dried seaweed, sliced beef, and a simple broth. Follow the soaking, simmering, and seasoning steps, with notes on recipe verification limits.",
+        "content": """
+<p class="wp-block-paragraph">Miyeokguk is Korean seaweed soup. This version combines dried miyeok, sliced beef, sesame oil, garlic, and soy sauce. Start by soaking and rinsing the seaweed, then cook it with the beef before adding the soup liquid.</p>
+<h2 class="wp-block-heading">Before You Start</h2>
+<p class="wp-block-paragraph">Check the dried seaweed package for preparation instructions and leave room for it to expand. The ingredient amounts and approximate timings below come from the existing recipe. No owner cooking log was supplied, so the soaked volume, serving yield, and timings have not been independently verified for this batch.</p>
+<h2 class="wp-block-heading">Ingredients</h2>
+<ul class="wp-block-list">
+<li>1 oz dried miyeok (Korean seaweed)</li>
+<li>8 cups water or beef stock</li>
+<li>8 oz beef brisket or chuck, thinly sliced</li>
+<li>2 tablespoons sesame oil</li>
+<li>2 tablespoons soy sauce</li>
+<li>1 tablespoon minced garlic</li>
+<li>Salt to taste</li>
+<li>2 green onions, chopped</li>
+<li>1 tablespoon fish sauce, optional</li>
+<li>White pepper to taste</li>
+<li>Cooked rice for serving</li>
+</ul>
+<h2 class="wp-block-heading">Cooking Method</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>Soak and prepare the seaweed:</strong> Soak the dried miyeok in cold water until pliable, following the package instructions. The existing recipe suggests about 30 minutes. Drain, rinse thoroughly, gently squeeze out excess water, and cut long strands into bite-sized pieces.</li>
+<li id="recipe-step-2"><strong>Cook the beef and garlic:</strong> Heat the sesame oil in a large pot over medium heat. Add the sliced beef and cook until browned; the existing recipe suggests 2–3 minutes. Add the minced garlic and stir for about 30 seconds until fragrant.</li>
+<li id="recipe-step-3"><strong>Add the seaweed:</strong> Add the prepared seaweed to the beef and stir-fry for 2–3 minutes. Add the soy sauce and mix well.</li>
+<li id="recipe-step-4"><strong>Simmer the soup:</strong> Add 8 cups of water or beef stock, bring to a boil, and reduce to medium-low heat. Simmer until the seaweed is tender and the beef is cooked through; the existing recipe suggests 15–20 minutes. Add the optional fish sauce, then season with salt and white pepper to taste.</li>
+<li id="recipe-step-5"><strong>Serve:</strong> Ladle the soup into bowls, garnish with chopped green onions, and serve with cooked rice.</li>
+</ol>
+<h2 class="wp-block-heading">Texture and Seasoning</h2>
+<p class="wp-block-paragraph">Check the seaweed texture before finishing the soup. If the strands remain firm, continue simmering and check again. Taste before adding salt: soy sauce, fish sauce, and prepared stock can all contribute seasoning. Water and beef stock are alternatives in the existing recipe; choose the liquid before adjusting the final seasoning.</p>
+<h2 class="wp-block-heading">Recipe Notes and Limits</h2>
+<p class="wp-block-paragraph">This edit preserves the existing ingredient amounts and cooking sequence while removing unsupported personal stories and health claims. The previous dry-to-soaked volume estimate is omitted because no preparation record supports it. This page does not claim a tested yield, tasting result, or nutrition figures.</p>
+<h2 class="wp-block-heading">Plan the Meal</h2>
+<p class="wp-block-paragraph">Prepare the seaweed before starting the beef, and keep the rice ready for serving. For pantry planning, see the <a href="/korean-cooking-for-beginners/">Korean cooking guide for beginners</a>. Compare other soup bases in <a href="/kongnamul-gukbap/">kongnamul gukbap, Korean bean sprout soup with rice</a>, and <a href="/doenjang-jjigae/">doenjang jjigae, soybean paste stew</a>.</p>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="300" height="168" src="/assets/post-images/2025/06/Miyeokguk-4.png" alt="Miyeokguk 1" class="wp-image-290" style="width:730px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="686" height="386" src="/assets/post-images/2025/06/Miyeokguk-2.png" alt="Miyeokguk 2" class="wp-image-291" style="width:730px;height:auto" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="750" height="545" src="/assets/post-images/2025/06/Miyeokguk-1.png" alt="Miyeokguk 3" class="wp-image-292" /></figure>""",
+    },
     "kongguksu": {
         "title": "Kongguksu Recipe",
         "seo_title": "Kongguksu Recipe | KFOOD Journal",
@@ -702,50 +743,170 @@ POST_OVERRIDES = {
 <p class="wp-block-paragraph">Compare this clear short-rib broth with mild <a href="/seolleongtang/">seolleongtang</a> and spicy <a href="/yukgaejang/">yukgaejang</a>. If this is your first week cooking Korean food, begin with the <a href="/korean-cooking-for-beginners/">five-dish Korean cooking starter plan</a>.</p>
 """,
     },
-    "godeungeo-gui": {
-        "title": "Godeungeo Gui Recipe: Korean Grilled Mackerel with Crispy Skin",
+    "haemultang": {
+        "title": "Haemultang Recipe: Spicy Korean Seafood Stew",
+        "seo_title": "Haemultang Recipe: Korean Seafood Stew | KFOOD Journal",
+        "lastmod": "2026-09-01",
         "excerpt": (
-            "Make Korean grilled mackerel with crisp skin and juicy flesh using a grill, "
-            "skillet, oven, or air fryer, with practical tips for salting, odor, and bones."
+            "Make haemultang with crab, shrimp, squid, clams, mussels, and fish, "
+            "using a practical cooking order and clear seafood-safety checks."
         ),
-        "replacements": [
-            (
-                "<p class=\"wp-block-paragraph\">Confession time! I used to be one of those people who thought fish was either &#8220;expensive sushi&#8221; or &#8220;boring dinner protein.&#8221; Then I stumbled into a Korean BBQ place that had this whole section dedicated to grilled fish, and out of curiosity (and peer pressure from Korean friends), I ordered godeungeo-gui.</p>",
-                "<p class=\"wp-block-paragraph\">Godeungeo gui is a straightforward Korean preparation that relies on the mackerel’s natural richness. Salting seasons the flesh and draws moisture from the skin; thorough drying and steady heat do the rest.</p>",
-            ),
-            (
-                "<p class=\"wp-block-paragraph\">When it arrived &#8211; this beautifully charred, whole fish staring at me with its crispy skin glistening &#8211; I&#8217;ll admit I was a little intimidated. But that first bite? <strong>TOTAL FISH REVELATION.</strong> The skin was crispy like bacon, the flesh was buttery and flaky, and there was this incredible smoky, salty flavor that was completely different from any fish I&#8217;d ever had!</p>",
-                "<p class=\"wp-block-paragraph\">For easier serving, ask the fishmonger to butterfly the mackerel or use skin-on fillets. Whole fish offers a traditional presentation, while fillets cook faster and make portioning simpler.</p>",
-            ),
-            (
-                "<h2 class=\"wp-block-heading\">Why Your Body Will Thank You for This Fish Choice</h2>",
-                "<h2 class=\"wp-block-heading\">Serving and Food-Safety Notes</h2>",
-            ),
-            (
-                "<li><strong>Omega-3 powerhouse</strong> for heart and brain health</li>\n\n\n\n<li><strong>High-quality protein</strong> with all essential amino acids</li>\n\n\n\n<li><strong>Vitamin D</strong> for bone health and immune function</li>\n\n\n\n<li><strong>B vitamins</strong> for energy and nervous system support</li>\n\n\n\n<li><strong>Selenium</strong> for antioxidant protection</li>\n\n\n\n<li><strong>Low mercury</strong> compared to larger fish species</li>",
-                "<li>Buy chilled fish from a reliable seller and keep it refrigerated until cooking.</li>\n\n\n\n<li>Cook until the thickest part is opaque and flakes easily; an instant-read thermometer should reach 145°F (63°C).</li>\n\n\n\n<li>Mackerel has many fine bones. Check each portion carefully, especially when serving children or older diners.</li>\n\n\n\n<li>Serve immediately for the crispest skin and refrigerate leftovers promptly.</li>",
-            ),
-        ],
-        "append": """
-<h2 class="wp-block-heading">Four Reliable Ways to Cook Godeungeo Gui</h2>
+        "content": """
+<p class="wp-block-paragraph">Haemultang is a spicy Korean stew made with a mixture of seafood, vegetables, gochugaru, and gochujang. This inherited version uses crab, shrimp, squid, clams, mussels, and white fish. The main challenge is not the seasoning; it is preparing the seafood safely and adding each item in an order that avoids overcooking the quick-cooking pieces.</p>
+
+<p class="wp-block-paragraph"><strong>Bottom line:</strong> Prepare every ingredient before heating the pot. Start with crab and firm fish, add shellfish and shrimp after the broth returns to a simmer, and add squid near the end. Use temperature and visual doneness checks rather than one fixed time because seafood size, starting temperature, and pot load vary.</p>
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="512" height="341" src="/assets/post-images/2025/06/Haemultang-2.png" alt="Spicy Korean haemultang seafood stew" class="wp-image-302" style="width:730px;height:auto" /></figure>
+
+<h2 class="wp-block-heading">Haemultang Ingredients</h2>
+
+<h3 class="wp-block-heading">Seafood</h3>
 <ul class="wp-block-list">
-<li><strong>Outdoor grill:</strong> Oil clean grates, start skin-side down over medium-high heat, and turn only when the fish releases easily.</li>
-<li><strong>Skillet:</strong> Use a thin film of neutral oil over medium heat. Press a fillet gently for the first 20 seconds so the skin stays flat.</li>
-<li><strong>Oven:</strong> Roast skin-side up at 425°F (220°C) until the thickest part flakes, usually 10 to 15 minutes depending on thickness. Broil briefly only if more browning is needed.</li>
-<li><strong>Air fryer:</strong> Cook skin-side up at 390°F (200°C) and begin checking at 8 minutes. Avoid overcrowding so hot air can reach the skin.</li>
+<li>2 whole blue crabs, cleaned and quartered</li>
+<li>1 lb large shrimp, shells on</li>
+<li>1 lb squid, cleaned and cut into rings</li>
+<li>1 lb littleneck clams, scrubbed clean</li>
+<li>1/2 lb mussels, scrubbed and debearded</li>
+<li>8 oz firm white fish, such as cod or halibut, cut into chunks</li>
 </ul>
 
-<h2 class="wp-block-heading">How to Reduce Fish Odor Without Drying the Mackerel</h2>
-<p class="wp-block-paragraph">Remove the dark bloodline and any remaining membrane, pat the fish very dry, and keep the cooking area well ventilated. A short salting period improves texture, but leaving salt on too long can pull out too much moisture. Citrus is best added after cooking; a long acidic marinade can soften the surface.</p>
+<h3 class="wp-block-heading">Broth and Seasoning</h3>
+<ul class="wp-block-list">
+<li>8 cups seafood or chicken stock</li>
+<li>3 tablespoons gochugaru (Korean red pepper flakes)</li>
+<li>2 tablespoons gochujang (Korean chile paste)</li>
+<li>2 tablespoons soy sauce</li>
+<li>1 tablespoon fish sauce</li>
+<li>2 tablespoons rice wine or mirin</li>
+<li>1 tablespoon sesame oil</li>
+</ul>
+
+<h3 class="wp-block-heading">Vegetables and Aromatics</h3>
+<ul class="wp-block-list">
+<li>1 onion, sliced</li>
+<li>6 cloves garlic, minced</li>
+<li>2-inch piece ginger, julienned</li>
+<li>4 green onions, cut into 2-inch pieces</li>
+<li>1 Korean radish, julienned, or regular radish</li>
+<li>1 bunch Korean crown daisy, or spinach</li>
+<li>2 jalapeño peppers, sliced, optional</li>
+</ul>
+
+<h2 class="wp-block-heading">Haemultang Cooking Method</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>Prepare the seafood safely.</strong> Keep raw seafood and its tools separate from ready-to-eat foods. Scrub the clams and mussels and discard any with cracked shells. Live clams and mussels that remain open after tapping should also be discarded. Clean and portion the crab, shrimp, squid, and fish.</li>
+<li id="recipe-step-2"><strong>Build the seasoning base.</strong> Heat the sesame oil over moderate heat. Add the onion, garlic, and ginger and stir until aromatic. Stir in the gochugaru and gochujang briefly, then add the soy sauce, fish sauce, and rice wine before the chile mixture scorches.</li>
+<li id="recipe-step-3"><strong>Start the broth.</strong> Add the stock and radish and bring the pot to a boil, then reduce it to a steady simmer. Taste only after the seafood has cooked because the shellfish and fish sauce will change the salt level.</li>
+<li id="recipe-step-4"><strong>Add the sturdy seafood first.</strong> Add the crab and firm fish pieces. When the broth returns to a simmer, add the clams and mussels, followed by the shrimp. Avoid crowding the pot so the broth can return to temperature.</li>
+<li id="recipe-step-5"><strong>Finish with quick-cooking ingredients.</strong> Add the squid near the end, then add the green onion, crown daisy or spinach, and optional jalapeño. Keep the stew at a simmer just until the seafood is cooked through.</li>
+<li id="recipe-step-6"><strong>Check doneness before serving.</strong> Most seafood should reach 145°F (63°C). Fish should be opaque and flake easily, and shrimp and crab flesh should be pearly or white and opaque. Discard clams or mussels that did not open during cooking. Adjust the final seasoning and serve with rice.</li>
+</ol>
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="512" height="341" src="/assets/post-images/2025/06/Haemultang-3.png" alt="Crab and shellfish in haemultang broth" class="wp-image-303" style="width:730px;height:auto" /></figure>
+
+<h2 class="wp-block-heading">Ingredient Choices and Tradeoffs</h2>
+<ul class="wp-block-list">
+<li><strong>Crab:</strong> Blue crab is listed in the inherited recipe, but another edible crab can be used. Larger pieces take longer to heat through.</li>
+<li><strong>Shell-on shrimp:</strong> The shells add flavor to the broth, while peeled shrimp make serving easier.</li>
+<li><strong>Squid:</strong> Add it late because prolonged cooking can make the texture firm and chewy.</li>
+<li><strong>Crown daisy:</strong> This herb has a distinctive flavor. Spinach is milder but wilts in a similar way.</li>
+<li><strong>Heat level:</strong> Reduce either the gochugaru or jalapeño first. Changing one ingredient at a time makes the result easier to judge.</li>
+</ul>
+
+<h2 class="wp-block-heading">Common Problems</h2>
+<ul class="wp-block-list">
+<li><strong>The broth is too salty:</strong> Wait until the shellfish opens before adding more soy sauce or fish sauce. Dilute with unsalted stock if necessary.</li>
+<li><strong>The chile base tastes bitter:</strong> The gochugaru or gochujang may have scorched. Keep the heat moderate and add liquid promptly.</li>
+<li><strong>The seafood cooks unevenly:</strong> Cut thick fish into similar pieces and allow the broth to return to a simmer between additions.</li>
+<li><strong>The squid is chewy:</strong> Add it after the other seafood is nearly cooked and remove the pot from heat once the doneness checks are met.</li>
+</ul>
+
+<h2 class="wp-block-heading">Food Safety and Verification Limit</h2>
+<p class="wp-block-paragraph">The <a href="https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely">FDA seafood guidance</a> provides the 145°F (63°C) target, visual doneness cues, and shellfish discard rules used above. The <a href="https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling">FDA safe food handling guidance</a> recommends separating raw seafood from ready-to-eat food and using safe thawing methods.</p>
+
+<p class="wp-block-paragraph">This page preserves an archived ingredient list and broad cooking order. No owner cooking log was supplied to confirm the exact yield, burner setting, or cooking time for this mixture, so it is not labeled kitchen-tested. Check the seafood in the actual pot and follow local food-safety guidance.</p>
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="752" src="/assets/post-images/2025/06/Haemultang-4.png" alt="Finished haemultang served in its cooking pot" class="wp-image-304" /></figure>
+
+<h2 class="wp-block-heading">What to Cook Next</h2>
+<p class="wp-block-paragraph">For another seafood stew, compare the order of ingredients in <a href="/sundubu-jjigae/">sundubu jjigae</a>. For a fermented soybean broth, see <a href="/doenjang-jjigae/">doenjang jjigae</a>. The <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a> explains how to organize a small pantry and a first week of Korean meals.</p>
+""",
+    },
+    "godeungeo-gui": {
+        "title": "Godeungeo Gui Recipe: Korean Grilled Mackerel with Crispy Skin",
+        "seo_title": "Godeungeo Gui Recipe: Korean Grilled Mackerel | KFOOD",
+        "lastmod": "2026-09-03",
+        "excerpt": (
+            "Make Korean grilled mackerel with a dry, crisp skin using a grill or skillet, "
+            "with clear doneness checks, serving options, and bone-safety notes."
+        ),
+        "content": """
+<p class="wp-block-paragraph">Godeungeo gui is Korean grilled mackerel seasoned simply with salt. Mackerel is rich and cooks quickly, so the useful decisions are drying the skin, using steady heat, waiting until the fish releases before turning, and checking the thickest part before serving.</p>
+
+<p class="wp-block-paragraph"><strong>Bottom line:</strong> Keep the fish cold until preparation, dry it thoroughly, season it lightly, and cook it skin-side down first. A food thermometer in the thickest part should reach 145°F (63°C); without one, check that the flesh is opaque and separates easily with a fork.</p>
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="512" height="341" src="/assets/post-images/2025/06/Godeungeo-gui-5.png" alt="Korean grilled mackerel with browned skin" class="wp-image-297" style="width:730px;height:auto" /></figure>
+
+<h2 class="wp-block-heading">Godeungeo Gui Ingredients</h2>
+
+<h3 class="wp-block-heading">Fish and Seasoning</h3>
+<ul class="wp-block-list">
+<li>2 to 3 whole fresh mackerel, about 1 lb each, cleaned and gutted</li>
+<li>Coarse sea salt or kosher salt</li>
+<li>Black pepper</li>
+<li>A small amount of sesame oil, optional</li>
+<li>Lemon or lime wedges</li>
+</ul>
+
+<h3 class="wp-block-heading">Optional Serving Items</h3>
+<ul class="wp-block-list">
+<li>Korean lettuce leaves for wrapping</li>
+<li>Steamed short-grain rice</li>
+<li>Ssamjang, or gochujang mixed with a small amount of sesame oil</li>
+<li>Kimchi</li>
+<li>Korean bean sprout salad</li>
+<li>Pickled radish</li>
+<li>Seasoned spinach or another vegetable side</li>
+</ul>
+
+<h2 class="wp-block-heading">Godeungeo Gui Cooking Method</h2>
+<ol class="wp-block-list">
+<li id="recipe-step-1"><strong>Prepare the fish.</strong> Keep the mackerel refrigerated until needed. Remove any remaining innards or membrane, rinse only if necessary, and pat the surface and cavity very dry. Check the flesh for visible bones.</li>
+<li id="recipe-step-2"><strong>Season lightly.</strong> Sprinkle salt over the skin, flesh, and cavity, with optional black pepper. Let the salt sit briefly while the cooking surface heats, then blot away moisture that appears on the skin.</li>
+<li id="recipe-step-3"><strong>Heat the cooking surface.</strong> Preheat clean grill grates or a heavy skillet over moderate heat. Oil the surface lightly; brush the fish with a small amount of sesame oil only if desired.</li>
+<li id="recipe-step-4"><strong>Cook skin-side down first.</strong> Place the mackerel on the hot surface and leave it undisturbed until the skin is browned and releases with gentle pressure. If it sticks firmly, wait and check again instead of forcing it.</li>
+<li id="recipe-step-5"><strong>Turn and finish.</strong> Turn the fish carefully and cook the flesh side. Whole fish and thick pieces need more time than thin fillets, so judge the actual fish rather than one fixed time.</li>
+<li id="recipe-step-6"><strong>Check doneness.</strong> Insert a food thermometer into the thickest flesh without touching bone and confirm 145°F (63°C). The flesh should also be opaque and separate easily with a fork. Transfer to a clean plate.</li>
+<li id="recipe-step-7"><strong>Serve and check for bones.</strong> Serve with citrus, rice, and optional banchan. Mackerel can contain fine bones, so inspect each portion carefully, especially when serving children or older diners.</li>
+</ol>
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="512" height="341" src="/assets/post-images/2025/06/Godeungeo-gui-3.png" alt="Mackerel cooking skin-side down" class="wp-image-298" style="width:730px;height:auto" /></figure>
+
+<h2 class="wp-block-heading">Grill or Skillet?</h2>
+<ul class="wp-block-list">
+<li><strong>Outdoor grill:</strong> Smoke and dripping fat stay outside, but delicate skin can stick to poorly cleaned grates. Oil the grates and turn only when the fish releases.</li>
+<li><strong>Heavy skillet:</strong> The flat surface makes contact easier to control and works well for fillets. Ventilate the kitchen and avoid crowding the pan.</li>
+<li><strong>Whole fish:</strong> It retains moisture well but takes longer to cook and requires more bone checking at the table.</li>
+<li><strong>Skin-on fillet:</strong> It cooks faster and portions easily, but it can dry out sooner after turning.</li>
+</ul>
 
 <h2 class="wp-block-heading">Crispy-Skin Troubleshooting</h2>
 <ul class="wp-block-list">
-<li><strong>The fish sticks:</strong> The surface or cooking grate was not hot and oiled enough, or the fish was moved before the skin released.</li>
-<li><strong>The skin is pale:</strong> Dry it more thoroughly and avoid crowding the pan.</li>
-<li><strong>The flesh is dry:</strong> Begin checking early and remove the fish as soon as the thickest part is cooked.</li>
+<li><strong>The fish sticks:</strong> The surface may be insufficiently heated or oiled, or the fish may have been moved before the skin released.</li>
+<li><strong>The skin stays pale:</strong> Blot the fish more thoroughly and leave space around each piece so moisture can escape.</li>
+<li><strong>The outside darkens too quickly:</strong> Reduce the heat and continue cooking until the center reaches the doneness check.</li>
+<li><strong>The flesh is dry:</strong> Begin checking the thickest part early and remove the fish once it reaches 145°F (63°C).</li>
 </ul>
 
-<p class="wp-block-paragraph">For a simple Korean meal, serve the fish with rice, kimchi, and one vegetable side. The <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a> explains how to build the rest of the table.</p>
+<h2 class="wp-block-heading">Buying, Storage, and Verification Limit</h2>
+<p class="wp-block-paragraph">The <a href="https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely">FDA seafood guidance</a> recommends choosing fish that is refrigerated or displayed on fresh ice and avoiding fish with sour, rancid, or ammonia-like odor. It also provides the 145°F (63°C) target and the opaque, easily flaked visual cue. The same temperature appears in the <a href="https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures">FoodSafety.gov minimum-temperature chart</a>.</p>
+
+<p class="wp-block-paragraph">This page preserves an archived ingredient list and broad grilling method. No owner cooking log was supplied to confirm a particular fish size, salt amount, heat setting, or cooking time, so the recipe is not labeled kitchen-tested. Check the fish in front of you and follow local food-safety guidance.</p>
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1024" height="1024" src="/assets/post-images/2025/06/Godeungeo-gui-1-1024x1024.webp" alt="Finished godeungeo gui served with Korean side dishes" class="wp-image-299" /></figure>
+
+<h2 class="wp-block-heading">Build a Simple Korean Meal</h2>
+<p class="wp-block-paragraph">Serve the fish with rice, kimchi, and one vegetable side rather than preparing every optional accompaniment. The <a href="/korean-cooking-for-beginners/">Korean cooking starter plan</a> explains the meal order, and <a href="/doenjang-jjigae/">doenjang jjigae</a> is a useful soup to compare when planning the rest of the table.</p>
 """,
     },
     "kongnamul-gukbap": {

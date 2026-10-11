@@ -22,9 +22,10 @@
   let hasInteraction = false;
   let hasHalfScroll = false;
   let engagedSent = false;
+  let hasElapsed20Seconds = false;
   const markInteraction = () => { hasInteraction = true; };
   const maybeSendEngagedReader = () => {
-    if (engagedSent || !hasInteraction || !hasHalfScroll || document.visibilityState !== 'visible') return;
+    if (engagedSent || !hasElapsed20Seconds || !hasInteraction || !hasHalfScroll || document.visibilityState !== 'visible') return;
     engagedSent = true;
     send('engaged_reader', { engagement_seconds: 20, scroll_depth: 50 });
   };
@@ -41,7 +42,10 @@
     }
   }, { passive: true });
 
-  window.setTimeout(maybeSendEngagedReader, 20000);
+  window.setTimeout(() => {
+    hasElapsed20Seconds = true;
+    maybeSendEngagedReader();
+  }, 20000);
 
   document.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return;

@@ -1,0 +1,49 @@
+{
+  "title": "고등어구이 영문 레시피의 조리 단계와 식품안전 기준 정리",
+  "reader_problem": "고등어구이를 처음 만드는 독자는 껍질이 팬이나 그릴에 붙지 않게 준비하는 법, 뒤집는 시점, 완전히 익었는지 확인하는 기준과 잔가시 주의사항을 찾지만 기존 글에는 과장된 맛 표현과 구조화 데이터에 들어간 불필요한 문장이 많습니다.",
+  "bottom_line": "기존 재료 목록은 보존하되 과장 표현을 제거하고, 표면 건조→간하기→조리면 예열→껍질 쪽부터 굽기→중심온도와 육안 확인 순서로 정리합니다. 정확한 시간은 생선 두께와 열원에 따라 달라지므로 확인되지 않은 고정값 대신 익힘 신호를 사용합니다.",
+  "decision_criteria": [
+    "검색 제목·설명·본문·Recipe JSON-LD가 소금으로 간한 고등어구이라는 실제 내용을 일치하게 설명하는가",
+    "작성자 기록이 없는 직접 시식, 정통성, 효능, 완벽한 결과를 사실처럼 표현하지 않는가",
+    "익힘 기준이 FDA와 FoodSafety.gov의 145°F(63°C), 불투명한 살과 쉽게 갈라지는 상태 안내 범위 안에 있는가",
+    "Recipe JSON-LD에는 실제 재료와 핵심 조리 단계만 들어가고 홍보 문장이나 식사 감상은 제외되는가"
+  ],
+  "evidence": [
+    {
+      "claim": "FDA는 생선을 145°F(63°C)까지 익히거나 살이 불투명해지고 포크로 쉽게 갈라지는 상태를 확인하도록 안내합니다.",
+      "source": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely"
+    },
+    {
+      "claim": "FoodSafety.gov의 안전 중심온도 표도 통생선과 생선 필레에 145°F(63°C) 또는 불투명하고 쉽게 갈라지는 상태를 제시합니다.",
+      "source": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+    },
+    {
+      "claim": "FDA는 냉장 또는 얼음 위에 보관된 생선을 선택하고, 생선 냄새가 시거나 암모니아 같지 않고 신선하고 순한지 확인하도록 안내합니다.",
+      "source": "https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely"
+    },
+    {
+      "claim": "현재 아카이브에는 재료와 그릴 조리 순서가 있으나 특정 고등어 크기, 그릴 온도, 정확한 수율과 결과를 확인한 작성자 조리 기록은 없습니다.",
+      "limit": "기존 조리법을 실용적인 초안으로 보존하되 검증 완료, 직접 시식 또는 고정 조리시간으로 표현하지 않습니다."
+    },
+    {
+      "claim": "2026-08-03 Search Console 기준 godeungeo gui 쿼리는 27회 노출되어 기존 URL을 정리할 우선순위가 있습니다.",
+      "source": "KFOOD_30_DAY_GROWTH_PLAN.md",
+      "limit": "당시 기준값이며 현재 성과나 향후 클릭을 보장하지 않습니다."
+    }
+  ],
+  "author_notes": [],
+  "options": [
+    {
+      "name": "기존 URL에서 그릴·팬 공통 조리 기준 정리",
+      "best_for": "검색 노출이 있는 글의 과장 표현과 구조화 데이터 오류를 우선 정리할 때",
+      "tradeoff": "실조리 기록이 없어 고정 조리시간과 특정 열원의 결과는 보장할 수 없습니다."
+    },
+    {
+      "name": "작성자 실조리 후 열원별 수치 추가",
+      "best_for": "고등어 중량, 두께, 염지량, 그릴·팬 온도와 완성 사진을 직접 기록할 수 있을 때",
+      "tradeoff": "현재 실행에는 그러한 작성자 기록이 없어 진행하지 않습니다."
+    }
+  ],
+  "recommended_action": "첫 번째 방식으로 기존 URL을 정리합니다. 과장 표현과 확인되지 않은 체험을 제거하고, 표면 건조와 뒤집는 신호, 145°F(63°C) 익힘 기준, 잔가시 주의, 검증 한계를 본문과 Recipe JSON-LD에 일치시킨 뒤 자동 검사로 확인합니다.",
+  "affiliate_links": []
+}
